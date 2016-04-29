@@ -1,0 +1,2 @@
+C:\Users\jrpal_000\Source\Repos\TPT-MMAS\TPT-MMAS\TPT-MMAS.Iot\TPT-MMAS.Iot.csproj;x86
+C:\Users\jrpal_000\Source\Repos\TPT-MMAS\TPT-MMAS\TPT-MMAS.Shared\TPT-MMAS.Shared.csproj;x86

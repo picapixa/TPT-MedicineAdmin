@@ -1,0 +1,272 @@
+﻿<Page
+    x:Class="TPT_MMAS.Iot.Views.DebuggingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPT_MMAS.Iot.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Debugging, Source={StaticResource Locator}}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Pivot>
+            <PivotItem Header="Tray Control">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Padding="8" Background="#FF08B600" Margin="0,0,0,8"
+                          Visibility="{x:Bind VM.IsTrayOpen, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                        <TextBlock Text="TRAY CLOSED" TextAlignment="Center" Foreground="White" />
+                    </Grid>
+
+                    <Grid Padding="8" Background="#FFB60000" Margin="0,0,0,8" 
+                          Visibility="{x:Bind VM.IsTrayOpen, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Text="TRAY OPEN" TextAlignment="Center" Foreground="White" />
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="0,0,0,8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="ToggleButton" x:Key="TrayToggleButtonStyle">
+                                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                                <Setter Property="VerticalAlignment" Value="Stretch" />
+                                <Setter Property="FontSize" Value="24" />
+                                <Setter Property="Grid.ColumnSpan" Value="3" />
+                            </Style>
+                            <Style TargetType="Grid" x:Key="TurnOnCounterGridStyle">
+                                <Setter Property="Background" Value="#FFE8E8E8" />
+                                <Setter Property="Grid.Row" Value="1" />
+                            </Style>
+                            <Style TargetType="Grid" x:Key="TurnOffCounterGridStyle">
+                                <Setter Property="Background" Value="#FFF1F1F1" />
+                                <Setter Property="Grid.Row" Value="1" />
+                                <Setter Property="Grid.Column" Value="2" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">1</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">2</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">3</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">4</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">5</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">6</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">7</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Style="{StaticResource TrayToggleButtonStyle}" Click="OnTrayButtonClick">8</ToggleButton>
+                            <Grid Style="{StaticResource TurnOnCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">ON</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Style="{StaticResource TurnOffCounterGridStyle}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock TextAlignment="Center">OFF</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <TextBlock x:Name="tb_statusArea" TextAlignment="Center" Text="DebuggingPage.xaml Loaded, On/Off counter to be implemented"/>
+                    </Grid>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="RFID" Loaded="OnRfidTabLoaded">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="tb_rfdata" Text="{x:Bind VM.ScannedData, Mode=OneWay, FallbackValue='error', TargetNullValue='scan now'}" 
+                               FontSize="36" HorizontalAlignment="Center"/>
+                    <Button x:Name="btn_rfredo" Content="scan again" IsEnabled="False"
+                            Click="btn_rfredo_Click" Visibility="Collapsed"
+                            HorizontalAlignment="Center" Margin="0,20"/>
+                    <!--<ToggleButton x:Name="tbtn_scanSwitch" Content="Switch RF scanning" Margin="0,20" IsChecked="{x:Bind VM.IsRfScanningEnabled}"/>-->
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPT_MMAS.Shared.Styles">
+
+
+    <!-- https://color.adobe.com/Cherry-Cheesecake-color-theme-2354/ -->
+    <!-- https://color.adobe.com/antigravity-color-theme-1839482/-->
+    <Color x:Key="TPTAppPrimaryColor">#FFB9121B</Color>
+    <Color x:Key="TPTAppDarkColor"></Color>
+
+</ResourceDictionary>
