@@ -8,6 +8,8 @@ using TPT_MMAS.Iot.Hardware;
 using TPT_MMAS.Shared.Interface;
 using System.ComponentModel;
 using Windows.System.Threading;
+using Windows.UI.Core;
+using Windows.ApplicationModel.Core;
 
 namespace TPT_MMAS.Iot.ViewModel
 {
@@ -31,13 +33,25 @@ namespace TPT_MMAS.Iot.ViewModel
             set { Set(nameof(IsTrayOpen), ref _isTrayOpen, value); }
         }
 
+
+        private TrayController _trayController;
+
+        public TrayController TrayController
+        {
+            get { return _trayController; }
+            set { Set(nameof(TrayController), ref _trayController, value); }
+        }
+
+
         private void LoadTrayController()
         {
             TrayController = TrayController.Instance;
-            TrayController.TrayStatusChanged += OnTrayStatusChanged;
+            //TrayController = new TrayController();
+            TrayController.PropertyChanged += OnTrayStatusChanged;
+            //TrayController.TrayStatusChanged += OnTrayStatusChanged;
+            //TrayController.ContainerStateChanged += OnTrayContainerStateChanged;
         }
-
-        private TrayController TrayController { get; set; }
+        
 
         public async Task EnableLedAsync(int n)
         {
@@ -46,7 +60,8 @@ namespace TPT_MMAS.Iot.ViewModel
         
         private void OnTrayStatusChanged(object sender, PropertyChangedEventArgs e)
         {
-            IsTrayOpen = (sender as TrayController).IsTrayOpen;
+            if (e.PropertyName == "IsTrayOpen")
+                IsTrayOpen = (sender as TrayController).IsTrayOpen;
         }
         #endregion
 
@@ -79,18 +94,22 @@ namespace TPT_MMAS.Iot.ViewModel
             RfidReader.RfDataChanged += ReadScannedData;
 
             // get first scan
-            string code = await RfidReader.GetRfidDataAsync();
-            ScannedData = code;
+
+            while (true)
+            await RfidReader.GetRfidDataAsync();
         }
 
         private async void ReadScannedData(object sender, PropertyChangedEventArgs e)
         {
             string c = RfidReader.RfData.ToString();
 
-            await ThreadPool.RunAsync((args) => {
+            var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
                 ScannedData = c;
-            }, WorkItemPriority.Normal);
+            });
 
+            await RfidReader.GetRfidDataAsync();
         }
 
         #endregion

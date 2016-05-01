@@ -4,9 +4,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TPT_MMAS.Iot.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hw="using:TPT_MMAS.Iot.Hardware"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     DataContext="{Binding Debugging, Source={StaticResource Locator}}">
+
+    <Page.Resources>
+
+        <Style TargetType="ToggleButton" x:Key="TrayToggleButtonStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Grid.ColumnSpan" Value="3" />
+        </Style>
+        <Style TargetType="Grid" x:Key="TurnOnCounterGridStyle">
+            <Setter Property="Background" Value="#FFE8E8E8" />
+            <Setter Property="Grid.Row" Value="1" />
+        </Style>
+        <Style TargetType="Grid" x:Key="TurnOffCounterGridStyle">
+            <Setter Property="Background" Value="#FFF1F1F1" />
+            <Setter Property="Grid.Row" Value="1" />
+            <Setter Property="Grid.Column" Value="2" />
+        </Style>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
         <Pivot>
@@ -28,7 +48,7 @@
                         <TextBlock Text="TRAY OPEN" TextAlignment="Center" Foreground="White" />
                     </Grid>
 
-                    <Grid Grid.Row="1" Margin="0,0,0,8">
+                    <Grid x:Name="grid_TrayControls" Grid.Row="1" Margin="0,0,0,8">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -39,25 +59,8 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Grid.Resources>
-                            <Style TargetType="ToggleButton" x:Key="TrayToggleButtonStyle">
-                                <Setter Property="HorizontalAlignment" Value="Stretch" />
-                                <Setter Property="VerticalAlignment" Value="Stretch" />
-                                <Setter Property="FontSize" Value="24" />
-                                <Setter Property="Grid.ColumnSpan" Value="3" />
-                            </Style>
-                            <Style TargetType="Grid" x:Key="TurnOnCounterGridStyle">
-                                <Setter Property="Background" Value="#FFE8E8E8" />
-                                <Setter Property="Grid.Row" Value="1" />
-                            </Style>
-                            <Style TargetType="Grid" x:Key="TurnOffCounterGridStyle">
-                                <Setter Property="Background" Value="#FFF1F1F1" />
-                                <Setter Property="Grid.Row" Value="1" />
-                                <Setter Property="Grid.Column" Value="2" />
-                            </Style>
-                        </Grid.Resources>
 
-                        <Grid>
+                        <Grid DataContext="{x:Bind VM.TrayController.TrayContainers[0],Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -71,17 +74,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28" Text="{Binding OnStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28" Text="{Binding OffStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Column="1">
+                        <Grid Grid.Column="1" DataContext="{x:Bind VM.TrayController.TrayContainers[1],Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -95,17 +98,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28" Text="{Binding OnStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28" Text="{Binding OffStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Column="2">
+                        <Grid Grid.Column="2" DataContext="{x:Bind VM.TrayController.TrayContainers[2], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -119,17 +122,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28" Text="{Binding OnStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Column="3">
+                        <Grid Grid.Column="3" DataContext="{x:Bind VM.TrayController.TrayContainers[3], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -143,17 +146,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OnStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" DataContext="{x:Bind VM.TrayController.TrayContainers[4], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -167,17 +170,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OnStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, Mode=OneWay, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid Grid.Row="1" Grid.Column="1" DataContext="{x:Bind VM.TrayController.TrayContainers[5], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -191,17 +194,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OnStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Row="1" Grid.Column="2">
+                        <Grid Grid.Row="1" Grid.Column="2" DataContext="{x:Bind VM.TrayController.TrayContainers[6], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -215,17 +218,17 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OnStates, FallbackValue=0}" />
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Row="1" Grid.Column="3">
+                        <Grid Grid.Row="1" Grid.Column="3" DataContext="{x:Bind VM.TrayController.TrayContainers[7], Mode=OneWay}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -239,21 +242,22 @@
                             <Grid Style="{StaticResource TurnOnCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">ON</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OnStates,FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                             <Grid Style="{StaticResource TurnOffCounterGridStyle}">
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock TextAlignment="Center">OFF</TextBlock>
-                                    <TextBlock TextAlignment="Center" FontSize="28">0</TextBlock>
+                                    <TextBlock TextAlignment="Center" FontSize="28"  Text="{Binding OffStates, FallbackValue=0}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
 
                     </Grid>
-
+                    
                     <Grid Grid.Row="2">
-                        <TextBlock x:Name="tb_statusArea" TextAlignment="Center" Text="DebuggingPage.xaml Loaded, On/Off counter to be implemented"/>
+                        <TextBlock x:Name="tb_statusArea" TextAlignment="Center" 
+                                   Text="{x:Bind VM.TrayController.RawData, FallbackValue='DebuggingPage.xaml Loaded', Mode=OneWay}"/>
                     </Grid>
                 </Grid>
             </PivotItem>

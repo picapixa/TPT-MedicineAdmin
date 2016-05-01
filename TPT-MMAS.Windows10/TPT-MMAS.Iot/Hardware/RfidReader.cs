@@ -104,7 +104,7 @@ namespace TPT_MMAS.Iot.Hardware
         public async Task<string> GetRfidDataAsync()
         {
             string c = "";
-            c = await Task.Run<string>(() =>
+            c = await Task.Run(() =>
             {
                 string code = null;
                 bool isDone = false;

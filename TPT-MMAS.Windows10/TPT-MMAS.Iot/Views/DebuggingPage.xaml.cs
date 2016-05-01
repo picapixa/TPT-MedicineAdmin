@@ -120,37 +120,7 @@ namespace TPT_MMAS.Iot.Views
             VM.LoadRfidReaderAsync();
         }
 
-        private void btn_rfredo_Click(object sender, RoutedEventArgs e)
-        {
-            //(sender as Button).IsEnabled = false;
-            //tb_rfdata.Text = "scan now";
-
-            //string c = await CheckIfRfDataAvailable();
-            //tb_rfdata.Text = c;
-            //RfData = c;
-
-            //(sender as Button).IsEnabled = true;
-        }
-
         #endregion
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //public void RaisePropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
-        //public bool Set<T>(string propertyName, ref T source, T value)
-        //{
-        //    if (Equals(source, value))
-        //    {
-        //        return false;
-        //    }
-
-        //    source = value;
-        //    RaisePropertyChanged(propertyName);
-        //    return true;
-        //}
+        
     }
 }
