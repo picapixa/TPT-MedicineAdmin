@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Command;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Windows.System;
 using Windows.UI.Core;
@@ -7,6 +6,12 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
+/// <summary>
+/// The following code is derived from the MVVMLight library, which is under the MIT License.
+/// 
+/// Project: https://mvvmlight.codeplex.com/
+/// License: https://mvvmlight.codeplex.com/license
+/// </summary>
 namespace TPT_MMAS.Shared.Common
 {
     /// <summary>

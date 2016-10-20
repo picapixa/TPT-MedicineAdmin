@@ -11,8 +11,8 @@
     <AssemblyName>TPT-MMAS.Shared</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -107,23 +107,88 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\HospitalApi.cs" />
+    <Compile Include="API\ImsApi.cs" />
+    <Compile Include="API\WebClient.cs" />
+    <Compile Include="Common\TPT\ApiSettings.cs" />
+    <Compile Include="Common\TPT\DeviceHelper.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\TPT\NavigationParameterArgs.cs" />
+    <Compile Include="Common\TPT\NotifyPropertyChanged.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Common\TPT\SettingsHelper.cs" />
+    <Compile Include="Communications\SocketService.cs" />
+    <Compile Include="Communications\TcpClient.cs" />
+    <Compile Include="Communications\TcpListener.cs" />
+    <Compile Include="Control\Iterator.cs" />
+    <Compile Include="Control\PatientGridView.cs" />
+    <Compile Include="Control\OpenDownCommandBar.cs" />
+    <Compile Include="Control\UserControls\TrayView.xaml.cs">
+      <DependentUpon>TrayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\AdmissionRemarkToDescriptionConverter.cs" />
+    <Compile Include="Converter\AdmissionRemarkToSolidColorBrushConverter.cs" />
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
-    <Compile Include="Converter\NullToVisibilityConverter.cs" />
+    <Compile Include="Converter\Humanizr\PluralizeConverter.cs" />
+    <Compile Include="Converter\IntegerToBooleanConverter.cs" />
+    <Compile Include="Converter\IntegerToVisibilityConverter.cs" />
+    <Compile Include="Converter\NullListToBooleanConverter.cs" />
+    <Compile Include="Converter\NullListToVisibilityConverter.cs" />
+    <Compile Include="Converter\Humanizr\QuantityConverter.cs" />
+    <Compile Include="Converter\Humanizr\RelativeDateTimeConverter.cs" />
+    <Compile Include="Converter\MedsFilterEnumToStringConverter.cs" />
     <Compile Include="Interface\INavigable.cs" />
+    <Compile Include="Interface\IRefreshable.cs" />
+    <Compile Include="Model\Admission.cs" />
+    <Compile Include="Model\AdmittedPatient.cs" />
+    <Compile Include="Model\ApiException.cs" />
+    <Compile Include="Model\BridgeMessage.cs" />
+    <Compile Include="Model\DataService\HospitalDataService.cs" />
+    <Compile Include="Model\DataService\ImsDataService.cs" />
+    <Compile Include="Model\Finding.cs" />
+    <Compile Include="Model\MedicineInventory.cs" />
+    <Compile Include="Model\MobileMedAdminSystem.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Prescription.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Personnel.cs" />
+    <Compile Include="Presenters\DeviceInfoPresenter.cs" />
+    <Compile Include="Presenters\NetworkPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelMessages\ExceptionDialogMessage.cs" />
+    <Compile Include="ViewModelMessages\ListViewBaseNavigationMessage.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\PatientProfileViewModel.cs" />
+    <Compile Include="ViewModel\PatientsViewModel.cs" />
+    <Compile Include="ViewModel\ShellViewModel.cs" />
     <EmbeddedResource Include="Properties\TPT_MMAS.Shared.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Control\UserControls\TrayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Styles\AppStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -14,6 +14,8 @@ using TPT_MMAS.Shared.Interface;
 using Windows.Devices.SerialCommunication;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
+using Windows.Media.Playback;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -35,7 +37,7 @@ namespace TPT_MMAS.Iot.Views
         private NavigationHelper navigationHelper;
 
         private DebuggingViewModel VM { get; set; }
-
+        
         public DebuggingPage()
         {
             InitializeComponent();
@@ -92,35 +94,42 @@ namespace TPT_MMAS.Iot.Views
         }
         #endregion
 
-        #region RF methods
-
-        //private uint MaxReadLength { get; set; }
-        //private DataReader DataReader { get; set; }
-        //private SerialDevice SerialPort { get; set; }
-
-        //private RfidReader RfidReader { get; set; }
-        
-        private void OnRfidTabLoaded(object sender, RoutedEventArgs e)
-        {
-            //RfidReader = new RfidReader(5, 6);
-            //RfidReader.RfDataChanged += (s, args) =>
-            //{
-            //    string d = RfidReader.RfData.ToString();
-            //    RfData = d;
-            //};
-            //string code = await CheckIfRfDataAvailable();
-            //tb_rfdata.Text = code;
-            //RfData = code;
-            //btn_rfredo.IsEnabled = true;
-
-            //while (true)
-            //{
-            //    await CheckIfRfDataAvailable();
-            //}
-            VM.LoadRfidReaderAsync();
-        }
+        #region Messaging
 
         #endregion
-        
+
+        #region RF methods
+
+        private void OnRfidTabLoaded(object sender, RoutedEventArgs e)
+        {
+            if (App.PluggedDevice == Device.Prototype)
+                VM.LoadRfidReaderAsync();
+        }
+
+
+
+        #endregion
+
+        private void OnSoundCheckPlayButtonCheckedChanged(object sender, RoutedEventArgs e)
+        {
+            ToggleButton tb = sender as ToggleButton;
+
+            if (tb.IsChecked == true)
+            {
+                me_soundCheck.Play();
+                tb.Content = "Stop";
+            }
+            else
+            {
+                me_soundCheck.Stop();
+                tb.Content = "Play";
+            }
+        }
+
+        private void OnMediaPlayerMediaEnded(object sender, RoutedEventArgs e)
+        {
+            if (tbtn_playback.IsChecked == true)
+                tbtn_playback.IsChecked = false;
+        }
     }
 }

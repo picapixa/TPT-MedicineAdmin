@@ -133,17 +133,27 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "Windows.UI.Color";
             _typeNameTable[1] = "System.ValueType";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Byte";
+            _typeNameTable[4] = "TPT_MMAS.Shared.Control.PatientGridView";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[6] = "Int32";
+            _typeNameTable[7] = "Windows.UI.Xaml.DataTemplate";
+            _typeNameTable[8] = "Double";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::Windows.UI.Color);
             _typeTable[1] = typeof(global::System.ValueType);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Byte);
+            _typeTable[4] = typeof(global::TPT_MMAS.Shared.Control.PatientGridView);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[6] = typeof(global::System.Int32);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.DataTemplate);
+            _typeTable[8] = typeof(global::System.Double);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -178,6 +188,7 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
             return -1;
         }
 
+        private object Activate_4_PatientGridView() { return new global::TPT_MMAS.Shared.Control.PatientGridView(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -211,6 +222,35 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
                 userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
+                break;
+
+            case 4:   //  TPT_MMAS.Shared.Control.PatientGridView
+                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_4_PatientGridView;
+                userType.AddMemberName("ItemColumns");
+                userType.AddMemberName("ItemRows");
+                userType.AddMemberName("ItemsSource");
+                userType.AddMemberName("ItemTemplate");
+                userType.AddMemberName("ItemWidth");
+                userType.AddMemberName("ItemHeight");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Windows.UI.Xaml.Controls.Control
+                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  Int32
+                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Windows.UI.Xaml.DataTemplate
+                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Double
+                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
@@ -257,6 +297,66 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
             var that = (global::Windows.UI.Color)instance;
             that.R = (global::System.Byte)Value;
         }
+        private object get_4_PatientGridView_ItemColumns(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemColumns;
+        }
+        private void set_4_PatientGridView_ItemColumns(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemColumns = (global::System.Int32)Value;
+        }
+        private object get_5_PatientGridView_ItemRows(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemRows;
+        }
+        private void set_5_PatientGridView_ItemRows(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemRows = (global::System.Int32)Value;
+        }
+        private object get_6_PatientGridView_ItemsSource(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemsSource;
+        }
+        private void set_6_PatientGridView_ItemsSource(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemsSource = (global::System.Object)Value;
+        }
+        private object get_7_PatientGridView_ItemTemplate(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemTemplate;
+        }
+        private void set_7_PatientGridView_ItemTemplate(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_8_PatientGridView_ItemWidth(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemWidth;
+        }
+        private void set_8_PatientGridView_ItemWidth(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemWidth = (global::System.Double)Value;
+        }
+        private object get_9_PatientGridView_ItemHeight(object instance)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            return that.ItemHeight;
+        }
+        private void set_9_PatientGridView_ItemHeight(object instance, object Value)
+        {
+            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
+            that.ItemHeight = (global::System.Double)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -288,6 +388,48 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
                 xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "R", "Byte");
                 xamlMember.Getter = get_3_Color_R;
                 xamlMember.Setter = set_3_Color_R;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemColumns":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemColumns", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_PatientGridView_ItemColumns;
+                xamlMember.Setter = set_4_PatientGridView_ItemColumns;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemRows":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemRows", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_PatientGridView_ItemRows;
+                xamlMember.Setter = set_5_PatientGridView_ItemRows;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemsSource":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_PatientGridView_ItemsSource;
+                xamlMember.Setter = set_6_PatientGridView_ItemsSource;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemTemplate":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_PatientGridView_ItemTemplate;
+                xamlMember.Setter = set_7_PatientGridView_ItemTemplate;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemWidth":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemWidth", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_PatientGridView_ItemWidth;
+                xamlMember.Setter = set_8_PatientGridView_ItemWidth;
+                break;
+            case "TPT_MMAS.Shared.Control.PatientGridView.ItemHeight":
+                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
+                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemHeight", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_PatientGridView_ItemHeight;
+                xamlMember.Setter = set_9_PatientGridView_ItemHeight;
                 break;
             }
             return xamlMember;

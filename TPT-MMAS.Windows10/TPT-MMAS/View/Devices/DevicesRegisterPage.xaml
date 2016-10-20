@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="TPT_MMAS.View.Devices.DevicesRegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPT_MMAS.View.Devices"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="TextboxHeaderTemplate">
+            <TextBlock Text="{Binding}" FontSize="14" CharacterSpacing="200"/>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ViewStates">
+                <VisualState x:Name="Mobile"/>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="stackPanel.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource TPTDefaultBackgroundColor}" />
+        </Grid.Background>
+
+        <StackPanel x:Name="stackPanel" MaxWidth="480" VerticalAlignment="Top" Padding="20">
+            <StackPanel>
+                <TextBlock Style="{ThemeResource HeaderStyle}">Pair your device</TextBlock>
+                <TextBlock Style="{ThemeResource BaseContentTextBlockStyle}" Margin="0,0,0,20" FontSize="16">Register the Mobile Medicine Administration System device first to pair it to this PC.</TextBlock>
+            </StackPanel>
+
+            <TextBlock x:Name="tb_restricted" Visibility="Collapsed" Style="{ThemeResource BaseContentTextBlockStyle}" Margin="0,0,0,20" FontSize="16">Please contact your system administrator to do this for you.</TextBlock>
+
+            <StackPanel x:Name="sp_form">
+                <TextBox HeaderTemplate="{StaticResource TextboxHeaderTemplate}" TextChanged="OnTextBoxInputChanged" Margin="0,0,0,20" x:Name="tbx_devName" Header="DEVICE NAME" />
+                <TextBox HeaderTemplate="{StaticResource TextboxHeaderTemplate}" TextChanged="OnTextBoxInputChanged" Margin="0,0,0,20" x:Name="tbx_ipAdd" Header="IP ADDRESS" InputScope="Default" />
+                <Button x:Name="btn_submit" Click="OnSubmitButtonClick" IsEnabled="False" HorizontalAlignment="Right" FontSize="16" Padding="12,8">Submit</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

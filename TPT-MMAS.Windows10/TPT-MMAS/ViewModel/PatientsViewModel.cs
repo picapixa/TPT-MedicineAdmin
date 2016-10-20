@@ -1,124 +1,73 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TPT_MMAS.Model;
-using TPT_MMAS.Model.DataService;
-using TPT_MMAS.Shared.Interface;
+using TPT_MMAS.Shared.Common.TPT;
+using TPT_MMAS.Shared.Model;
+using Windows.Storage;
 
 namespace TPT_MMAS.ViewModel
 {
-
-
-    public class PatientsViewModel : BaseViewModel, INavigable
+    public class PatientsViewModel : Shared.ViewModel.PatientsViewModel
     {
 
-        //TO-DO: SET THE STATION CODE BASED ON DEPLOYMENT CONFIGURATION
-        //but for now...
-        private string station = "MEDICAL1";
+        #region device management
+        private MobileMedAdminSystem _device;
 
-        public static bool IsOnIot { get; set; }
-
-
-        #region bindable properties
-        
-        private ObservableCollection<AdmittedPatient> _patients;
-
-        public ObservableCollection<AdmittedPatient> Patients
+        public MobileMedAdminSystem Device
         {
-            get { return _patients; }
-            set { Set(nameof(Patients), ref _patients, value); }
+            get { return _device; }
+            set { Set(nameof(Device), ref _device, value); }
         }
 
-
-        private ObservableCollection<Admission> _admissionsSuggestion;
-
-        public ObservableCollection<Admission> AdmissionsSuggestion
+        public static bool CheckIfMachineExists()
         {
-            get { return _admissionsSuggestion; }
-            set { Set(nameof(AdmissionsSuggestion), ref _admissionsSuggestion, value); }
+            string pairedDevice = SettingsHelper.GetLocalSetting("ims_pairedDevice");
+            return (pairedDevice != null);
         }
 
-        #endregion
-
-        public PatientsViewModel()
+        public static MobileMedAdminSystem GetStoredDevice()
         {
-            IsOnIot = App.IsRunningOnIOT;
-        }
+            string pairedDevice = SettingsHelper.GetLocalSetting("ims_pairedDevice");
 
-        public async void GetAdmittedPatientsAsync()
-        {
-            IsLoading = true;
-
-            List<AdmittedPatient> data = await ImsDataService.GetAdmissionsAsync(station, true);
-            ObservableCollection<AdmittedPatient> patients = new ObservableCollection<AdmittedPatient>(data);
-
-            if (Patients != null)
+            if (pairedDevice != null)
             {
-                List<AdmittedPatient> sortedFreshData = patients.OrderBy(ap => ap.ID).ToList<AdmittedPatient>();
-                List<AdmittedPatient> sortedPatients = Patients.OrderBy(ap => ap.ID).ToList<AdmittedPatient>();
-
-                var areCollectionsEqual = sortedFreshData.SequenceEqual(sortedPatients);
-                
-                if (areCollectionsEqual)
-                {
-                    IsLoading = false;
-                    return;
-                }
+                MobileMedAdminSystem system = JsonConvert.DeserializeObject<MobileMedAdminSystem>(pairedDevice);
+                return system;
             }
-
-            Patients = patients;
-
-            IsLoading = false;
-        }
-        
-        public async void GetAdmissionsFromHospitalAsync()
-        {
-            if (AdmissionsSuggestion != null)
-                return;
-            
-            var admissions = await HospitalDataService.GetAdmissionsAsync(station);
-            AdmissionsSuggestion = new ObservableCollection<Admission>(admissions.OrderBy(adm => adm.Patient.LastName));
+            else
+                return null;
         }
 
-        public async void AddAdmissionToImsAsync(object admissionObj)
+        public static bool RemoveStoredDevice()
         {
-            Admission admission = admissionObj as Admission;
-
-            bool alreadyExists = Patients.Any<AdmittedPatient>(ap => ap.Admission.ID == admission.ID);
-            if (alreadyExists)
-                return;
-
-            //register to database
-            //--offline? through local cache
-            //--online through api
             try
             {
-                var admittedPatient = await ImsDataService.PostAdmissionsAsync(admission, station);
-
-                //add to collection
-                Patients.Add(admittedPatient);
+                SettingsHelper.SetLocalSetting("ims_pairedDevice", null);
+                return true;
             }
             catch (Exception)
-            {                
-                throw;
+            {
+                return false;
             }
-
-        }
-
-        #region on view navigated to and from
-        public void Activate(object parameter)
-        {
-            GetAdmittedPatientsAsync();
-        }
-
-        public void Deactivate(object parameter)
-        {
-
         }
         #endregion
+        
+        public override void Activate(object parameter)
+        {
+            base.Activate(parameter);
+            
+            if (parameter != null)
+                Device = parameter as MobileMedAdminSystem;
+            else
+                Device = GetStoredDevice();
+        }
+
+        public override void Deactivate(object parameter)
+        {
+            base.Deactivate(parameter);
+        }
     }
 }

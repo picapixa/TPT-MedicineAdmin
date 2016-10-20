@@ -1,0 +1,21 @@
+﻿<ContentDialog
+    x:Class="TPT_MMAS.View.Dialog.AddMedicineDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPT_MMAS.View.Dialog"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Add Medicine"
+    PrimaryButtonText="Add" SecondaryButtonText="Cancel"
+    IsPrimaryButtonEnabled="False"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick" SecondaryButtonClick="ContentDialog_SecondaryButtonClick" 
+    VerticalAlignment="Center">
+
+    <StackPanel>
+        <TextBox x:Name="tbx_gen" Header="Generic Name" TextChanged="OnTextBoxChanged" />
+        <TextBox x:Name="tbx_brd" Header="Brand Name"  TextChanged="OnTextBoxChanged" />
+        <TextBox x:Name="tbx_amt" Header="Amount" TextChanged="OnTextBoxChanged" InputScope="Number" />
+        <TextBox x:Name="tbx_dsg"  Header="Dosage"  TextChanged="OnTextBoxChanged" />
+    </StackPanel>
+</ContentDialog>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:TPT_MMAS.Shared"
+	xmlns:conv="using:TPT_MMAS.Shared.Converter"
+	xmlns:humanizr="using:TPT_MMAS.Shared.Converter.Humanizr">
+
+    <conv:AdmissionRemarkToDescriptionConverter x:Key="AdmissionRemarkToDescriptionConverter" />
+    <conv:AdmissionRemarkToSolidColorBrushConverter x:Key="AdmissionRemarkToSolidColorBrushConverter" />
+    <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+	<conv:DateTimeConverter x:Key="DateTimeConverter" />
+	<conv:IntegerToBooleanConverter x:Key="IntegerToBooleanConverter" />
+	<conv:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
+    <conv:MedsFilterEnumToStringConverter x:Key="MedsFilterEnumToStringConverter" />
+    <conv:NullListToBooleanConverter x:Key="NullListToBooleanConverter" />
+	<conv:NullListToVisibilityConverter x:Key="NullListToVisibilityConverter" />
+	<humanizr:PluralizeConverter x:Key="PluralizeConverter" />
+	<humanizr:PluralizeUppercasedConverter x:Key="PluralizeUppercasedConverter" />
+	<humanizr:RelativeDateTimeConverter x:Key="RelativeDateTimeConverter" />
+	<humanizr:QuantityConverter x:Key="QuantityConverter" />
+
+</ResourceDictionary>

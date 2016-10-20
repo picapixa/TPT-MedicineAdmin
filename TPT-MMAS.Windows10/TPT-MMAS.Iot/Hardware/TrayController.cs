@@ -4,15 +4,18 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TPT_MMAS.Iot.Hardware.Foundation;
+using TPT_MMAS.Shared.Common;
+using TPT_MMAS.Shared.Common.TPT;
 
 namespace TPT_MMAS.Iot.Hardware
 {
-    public class TrayContainer : INotifyPropertyChanged
+    public class TrayContainer : NotifyPropertyChanged
     {
 
         private int _id;
@@ -55,36 +58,15 @@ namespace TPT_MMAS.Iot.Hardware
             get { return _offStates; }
             set { Set(nameof(OffStates), ref _offStates, value); }
         }
-
-
-        #region INPC handlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private bool Set<T>(string propertyName, ref T source, T value)
-        {
-            if (Equals(source, value))
-                return false;
-
-            source = value;
-            RaisePropertyChanged(propertyName);
-            return true;
-        }
-
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 
-    public class TrayController 
+    public class TrayController : NotifyPropertyChanged
     {
         private Arduino arduino;
 
         #region Bindable properties
 
         private bool _isTrayOpen;
-
         public bool IsTrayOpen
         {
             get { return _isTrayOpen; }
@@ -92,22 +74,26 @@ namespace TPT_MMAS.Iot.Hardware
         }
 
         private string _rawData;
-
         public string RawData
         {
             get { return _rawData; }
             set { Set(nameof(RawData), ref _rawData, value); }
         }
 
+        private string _containersRawStatus;
+        public string ContainersRawStatus
+        {
+            get { return _containersRawStatus; }
+            set { Set(nameof(ContainersRawStatus), ref _containersRawStatus, value, checkForEquality: false); }
+        }
+        
         private ObservableCollection<TrayContainer> _trayContainers;
-
         public ObservableCollection<TrayContainer> TrayContainers
         {
             get { return _trayContainers; }
             set { Set(nameof(TrayContainers), ref _trayContainers, value); }
         }
-
-
+        
         #endregion
 
         #region Singleton implementation
@@ -141,18 +127,12 @@ namespace TPT_MMAS.Iot.Hardware
             TrayContainers.CollectionChanged += TrayContainers_CollectionChanged;
         }
 
-        private void OnContainerStateChanged(object sender, PropertyChangedEventArgs e)
-        {
-            //RaiseContainerStateChanged();
-        }
-
         #region Tray slots event handlers
         private void TrayContainers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (TrayContainer item in e.NewItems)
-                    //item.PropertyChanged += TraySlot_PropertyChanged;
                     item.PropertyChanged += OnContainersChanged;
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -167,17 +147,16 @@ namespace TPT_MMAS.Iot.Hardware
             RaisePropertyChanged(e.PropertyName);
         }
 
-        //private void TraySlot_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    TrayContainer slot = sender as TrayContainer;
-
-        //}
-
         #endregion
 
-        public async void GetStatusAsync()
+        /// <summary>
+        /// Gets the latest presence status of the tray controllers.
+        /// </summary>
+        /// <returns>A raw string response from the tray controller.</returns>
+        public async Task<string> GetPresenceStatusAsync()
         {
             await arduino.WriteDataAsync("A");
+            return ContainersRawStatus;
         }
 
         /// <summary>
@@ -226,13 +205,6 @@ namespace TPT_MMAS.Iot.Hardware
             string state = response.Substring(5);
 
             TrayContainers.First(s => s.ID == n).IsIndicatorOn = (state == "ON");
-            //var container = TrayContainers.First(s => s.ID == n);
-            //TrayContainers.Remove(container);
-
-            //container.IsIndicatorOn = (state == "ON");
-
-            //TrayContainers.Add(container);
-            //TrayContainers.OrderBy(s => s.ID);
         }
 
         /// <summary>
@@ -243,37 +215,27 @@ namespace TPT_MMAS.Iot.Hardware
         {
             int n = (int)Char.GetNumericValue(response[7]);
             string state = response.Substring(9);
-            bool isOn = (state == "ON");
+            //bool isOn = (state == "ON");
 
             TrayContainers.First(s => s.ID == n).HasItem = (state == "ON");
             if (state == "ON")
                 TrayContainers.First(s => s.ID == n).OnStates++;
             else
                 TrayContainers.First(s => s.ID == n).OffStates++;
-
-            //var container = TrayContainers.First(s => s.ID == n);
-            //TrayContainers.Remove(container);
-
-            //container.HasItem = isOn;
-            //if (isOn)
-            //    container.OnStates++;
-            //else
-            //    container.OffStates++;
-
-            //TrayContainers.Add(container);
-            //TrayContainers.OrderBy(s => s.ID);
         }
 
         private void UpdateAllTrayContainerPresenceData(string response)
         {
             string data = response.Substring(5, 8);
             List<TrayContainer> slots = TrayContainers.OrderBy(s => s.ID).ToList();
-            
+
             foreach (TrayContainer item in slots)
             {
                 int i = item.ID;
+                int hasItem = (int)char.GetNumericValue(data[i - 1]);
 
-                TrayContainers.First(s => s.ID == i).HasItem = (data[i - 1] == 1);
+                TrayContainers.First(s => s.ID == i).HasItem = (hasItem == 0);
+
             }
 
         }
@@ -283,7 +245,7 @@ namespace TPT_MMAS.Iot.Hardware
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Arduino_ContentChanged(object sender, PropertyChangedEventArgs e)
+        private void Arduino_ContentChanged(object sender, PropertyChangedEventArgs e)
         {
             string content = arduino.StreamContent;
 
@@ -294,22 +256,25 @@ namespace TPT_MMAS.Iot.Hardware
                 if (item == "")
                     continue;
 
+                Debug.WriteLine("TrayController.RawData: " + item);
+
                 if (item.StartsWith("DATA_TRAY"))
                     IsTrayOpen = (item == "DATA_TRAY_OPEN");
                 else if (item.StartsWith("DATA_SW"))
                     SetSwitchStatus(item);
                 else if (item.StartsWith("DATA_"))
+                {
+                    ContainersRawStatus = item;
                     UpdateAllTrayContainerPresenceData(item);
+                }
                 else if (item.StartsWith("LED"))
                     SetIndicatorStatus(item);
-
+                
                 RawData = item;
-                //await Task.Delay(50);
             }
         }
 
         #region Property changed implementations
-        public PropertyChangedEventHandler PropertyChanged;
         //public PropertyChangedEventHandler TrayStatusChanged;
         //public PropertyChangedEventHandler ContainersChanged;
         //public PropertyChangedEventHandler ContainerStateChanged;
@@ -329,24 +294,6 @@ namespace TPT_MMAS.Iot.Hardware
         //    ContainerStateChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         //}
 
-        private bool Set<T>(string propertyName, ref T storage, T value, Action raiseChanged = null)
-        {
-            if (Equals(storage, value))
-                return false;
-
-            storage = value;
-            if (raiseChanged == null)
-                RaisePropertyChanged(propertyName);
-            else
-                raiseChanged.Invoke();
-
-            return true;
-        }
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         #endregion
 

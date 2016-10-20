@@ -11,8 +11,8 @@
     <AssemblyName>TPT-MMAS.Iot</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -22,7 +22,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;TPT_IOT</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>ARM</PlatformTarget>
@@ -68,7 +68,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;TPT_MMAS</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -98,26 +98,43 @@
     </Compile>
     <Compile Include="Design\DesignDataService.cs" />
     <Compile Include="Hardware\Foundation\Arduino.cs" />
-    <Compile Include="Hardware\RfidReader.cs" />
     <Compile Include="Hardware\TrayController.cs" />
+    <Compile Include="Hardware\WiegandReader.cs" />
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
-    <Compile Include="Presenters\DeviceInfoPresenter.cs" />
-    <Compile Include="Presenters\NetworkPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModelMessages\ConfirmationMessage.cs" />
+    <Compile Include="ViewModelMessages\ErrorDetectedMessage.cs" />
+    <Compile Include="ViewModelMessages\LoggingOutMessage.cs" />
+    <Compile Include="ViewModelMessages\MmasAuthenticateMessage.cs" />
+    <Compile Include="ViewModelMessages\TrayClosedMessage.cs" />
     <Compile Include="ViewModel\DebuggingViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PatientsViewModel.cs" />
+    <Compile Include="ViewModel\PatientViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\DebuggingPage.xaml.cs">
       <DependentUpon>DebuggingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\ConfirmationDialog.xaml.cs">
+      <DependentUpon>ConfirmationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\ErrorDialog.xaml.cs">
+      <DependentUpon>ErrorDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientPage.xaml.cs">
+      <DependentUpon>PatientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientsPage.xaml.cs">
+      <DependentUpon>PatientsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +144,8 @@
     <None Include="Win10_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ErrorSound.mp3" />
+    <Content Include="Assets\SoundCheck.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -149,7 +168,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Dialogs\ConfirmationDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ErrorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,7 +193,7 @@
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
       <Name>BehaviorsXamlSDKManaged</Name>
     </SDKReference>
-    <SDKReference Include="WindowsIoT, Version=10.0.10586.0">
+    <SDKReference Include="WindowsIoT, Version=10.0.14393.0">
       <Name>Windows IoT Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>

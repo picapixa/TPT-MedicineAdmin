@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.ApplicationModel;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
+/// <summary>
+/// The following code is derived from the MVVMLight library, which is under the MIT License.
+/// 
+/// Project: https://mvvmlight.codeplex.com/
+/// License: https://mvvmlight.codeplex.com/license
 namespace TPT_MMAS.Shared.Common
 {
     /// <summary>

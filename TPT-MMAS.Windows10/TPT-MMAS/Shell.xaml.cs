@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TPT_MMAS.Shared.Common.TPT;
+using TPT_MMAS.Shared.Interface;
+using TPT_MMAS.Shared.Model;
 using TPT_MMAS.View;
+using TPT_MMAS.View.Devices;
+using TPT_MMAS.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -22,19 +28,41 @@ namespace TPT_MMAS
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Shell : Page
+    public sealed partial class Shell : Page, INotifyPropertyChanged
     {
-        private Dictionary<Control, Type> NavigationDictionary { get; set; }
-        
-        public Shell()
+        private Type currentPage;
+        private object passedParameter;
+
+        private Dictionary<UIElement, Type> NavigationDictionary { get; set; }
+
+        private Personnel _currentUser;
+        public Personnel CurrentUser
         {
-            this.InitializeComponent();
-            this.SetNavigationDictionary();
+            get { return _currentUser; }
+            set { Set(nameof(CurrentUser), ref _currentUser, value); }
+        }
+
+        private ShellViewModel VM { get; set; }
+
+        public Shell(Type page, object parameter = null)
+        {
+            InitializeComponent();
+            Loaded += OnShellLoaded;
+            Unloaded += OnShellUnloaded;
+
+            VM = DataContext as ShellViewModel;
+            CurrentUser = App.LoggedUser;
+
+            currentPage = page;
+            passedParameter = parameter;
+
             ShellFrame.Loaded += ShellFrame_Loaded;
             ShellFrame.Navigated += ShellFrame_Navigated;
             btn_menu.Click += OnHamburgerButtonClick;
 
             SystemNavigationManager.GetForCurrentView().BackRequested += Shell_BackRequested;
+            
+            PrepareMainNavigation();
         }
 
         /// <summary>
@@ -47,24 +75,40 @@ namespace TPT_MMAS
             ShellSplitView.IsPaneOpen = (ShellSplitView.IsPaneOpen) ? false : true;
         }
 
-        private void ShellFrame_Loaded(object sender, RoutedEventArgs e)
+        private void OnShellLoaded(object sender, RoutedEventArgs e)
         {
-            var f = sender as Frame;
-            if (f.Content == null)
-            {
-                f.Navigate(typeof(PatientsPage));
-            }
+            var vm = DataContext as INavigable;
+            if (vm != null)
+                vm.Activate(null);
         }
 
-        private void SetNavigationDictionary()
+        private void OnShellUnloaded(object sender, RoutedEventArgs e)
         {
-            NavigationDictionary = new Dictionary<Control, Type>()
+            var vm = DataContext as INavigable;
+            if (vm != null)
+                vm.Deactivate(null);
+        }
+
+        private void PrepareMainNavigation()
+        {
+            // Start prepping links of controls to pages
+            NavigationDictionary = new Dictionary<UIElement, Type>()
             {
                 { RB_Patients, typeof(PatientsPage) },
                 { RB_Medicines, typeof(MedicinesPage) },
-                { RB_Systems, typeof(SystemsPage) },
-                { RB_Debug, typeof(DebugPage) }
+                { RB_Settings, typeof(SettingsPage) }
             };
+            
+            //Hide stuff when we need to
+            var navItems = SP_MainNav.Children;
+            foreach (UIElement control in navItems)
+            {
+                Type value;
+                NavigationDictionary.TryGetValue(control, out value);
+
+                if (value == null)
+                    control.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Shell_BackRequested(object sender, BackRequestedEventArgs e)
@@ -75,7 +119,17 @@ namespace TPT_MMAS
                 e.Handled = true;
             }
         }
-        
+
+        #region Shell Frame
+
+        private void ShellFrame_Loaded(object sender, RoutedEventArgs e)
+        {
+            var f = sender as Frame;
+            if (f.Content == null)
+            {
+                f.Navigate(currentPage, passedParameter);
+            }
+        }
 
         private void ShellFrame_Navigated(object sender, NavigationEventArgs e)
         {
@@ -88,8 +142,17 @@ namespace TPT_MMAS
                     ShellFrame.BackStack.Clear();
             }
 
+            IRefreshable vm = (ShellFrame.Content as Page).DataContext as IRefreshable;
+            VM.CurrentViewModel = vm;
 
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = (ShellFrame.CanGoBack) ?
+            UpdateAppViewBackButtonVisibility(ShellFrame);
+        }
+
+        #endregion
+
+        public static void UpdateAppViewBackButtonVisibility(Frame frame)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = (frame.CanGoBack) ?
                 AppViewBackButtonVisibility.Visible :
                 AppViewBackButtonVisibility.Collapsed;
         }
@@ -102,5 +165,42 @@ namespace TPT_MMAS
                 ShellFrame.Navigate(NavigationDictionary[selectedNav]);
             }
         }
+
+        private async void OnLogoutButtonClick(object sender, RoutedEventArgs e)
+        {
+            ContentDialog modal = new ContentDialog();
+            modal.Title = "Are you sure you want to log out?";
+            modal.PrimaryButtonText = "Logout";
+            modal.SecondaryButtonText = "Cancel";
+            modal.PrimaryButtonClick += Logout;
+
+            await modal.ShowAsync();
+        }
+
+        private void Logout(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+            App.LoggedUser = null;
+            Window.Current.Content = new LoginPage();
+        }
+
+        #region INPC implementation
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private bool Set<T>(string propertyName, ref T storage, T value)
+        {
+            if (Equals(storage, value))
+                return false;
+
+            storage = value;
+            RaisePropertyChanged(propertyName);
+            return true;
+        }
+        #endregion
+
     }
 }

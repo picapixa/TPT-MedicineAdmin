@@ -7,11 +7,29 @@ using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Threading;
 using TPT_MMAS.Iot.Views;
+using TPT_MMAS.Shared.Common.TPT;
+using TPT_MMAS.Shared.Model;
+using System.ComponentModel;
+using Windows.Networking;
 
 namespace TPT_MMAS.Iot
 {
+    public enum Device
+    {
+        DevBoard,
+        Prototype
+    }
+
     sealed partial class App
     {
+        public static Personnel LoggedUser { get; set; }
+        
+        public static ApiSettings ApiSettings { get; set; }
+
+        public static HostName PairedHost { get; set; }
+
+        public static Device PluggedDevice => Device.Prototype;
+
         public App()
         {
             InitializeComponent();
@@ -44,7 +62,7 @@ namespace TPT_MMAS.Iot
 
             // Ensure the current window is active
             Window.Current.Activate();
-            //DispatcherHelper.Initialize();
+            DispatcherHelper.Initialize();
 
             //Messenger.Default.Register<NotificationMessageAction<string>>(
             //    this,

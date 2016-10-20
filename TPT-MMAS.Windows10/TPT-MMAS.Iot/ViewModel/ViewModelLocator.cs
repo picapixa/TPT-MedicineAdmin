@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using TPT_MMAS.Iot.Model;
+using TPT_MMAS.Shared.ViewModel;
 
 namespace TPT_MMAS.Iot.ViewModel
 {
@@ -24,6 +25,10 @@ namespace TPT_MMAS.Iot.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ShellViewModel>();
             SimpleIoc.Default.Register<DebuggingViewModel>();
+            SimpleIoc.Default.Register<PatientViewModel>();
+            SimpleIoc.Default.Register<PatientsViewModel>();
+
+            //Shared VMs
         }
 
         public static void RegisterServices()
@@ -62,6 +67,8 @@ namespace TPT_MMAS.Iot.ViewModel
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public ShellViewModel Shell => ServiceLocator.Current.GetInstance<ShellViewModel>();
         public DebuggingViewModel Debugging => ServiceLocator.Current.GetInstance<DebuggingViewModel>();
+        public PatientViewModel Patient => ServiceLocator.Current.GetInstance<PatientViewModel>();
+        public PatientsViewModel Patients => ServiceLocator.Current.GetInstance<PatientsViewModel>();
         #endregion
     }
 }

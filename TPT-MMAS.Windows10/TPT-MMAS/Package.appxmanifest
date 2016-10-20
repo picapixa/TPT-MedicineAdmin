@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="TPT-MMAS.Client" Publisher="CN=YourName" Version="1.0.0.0" />
+  <Identity Name="TPT-MMAS.Client" Publisher="CN=jrpal_000" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="78742b3f-3c92-4c8a-adc3-724c19ac765e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TPT_MMAS</DisplayName>
@@ -16,9 +16,13 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TPT_MMAS.App">
       <uap:VisualElements DisplayName="In-patient Management System" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="TPT_MMAS" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="TPT-IMS">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#E81123" />
       </uap:VisualElements>
       <Extensions>
         <uap:Extension Category="windows.protocol">
@@ -29,5 +33,6 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="privateNetworkClientServer" />
   </Capabilities>
 </Package>
