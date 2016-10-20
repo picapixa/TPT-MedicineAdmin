@@ -156,75 +156,27 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[33];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "TPT_MMAS.Iot.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "TPT_MMAS.Iot.ViewModel.MainViewModel";
+            _typeNameTable[2] = "TPT_MMAS.Iot.ViewModel.ShellViewModel";
             _typeNameTable[3] = "GalaSoft.MvvmLight.ViewModelBase";
             _typeNameTable[4] = "GalaSoft.MvvmLight.ObservableObject";
-            _typeNameTable[5] = "TPT_MMAS.Iot.ViewModel.ShellViewModel";
-            _typeNameTable[6] = "TPT_MMAS.Shared.ViewModel.BaseViewModel";
-            _typeNameTable[7] = "TPT_MMAS.Iot.ViewModel.DebuggingViewModel";
-            _typeNameTable[8] = "TPT_MMAS.Iot.ViewModel.PatientViewModel";
-            _typeNameTable[9] = "TPT_MMAS.Shared.ViewModel.PatientProfileViewModel";
-            _typeNameTable[10] = "TPT_MMAS.Iot.ViewModel.PatientsViewModel";
-            _typeNameTable[11] = "TPT_MMAS.Shared.ViewModel.PatientsViewModel";
-            _typeNameTable[12] = "TPT_MMAS.Iot.Shell";
-            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[14] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[15] = "TPT_MMAS.Iot.Views.DebuggingPage";
-            _typeNameTable[16] = "TPT_MMAS.Iot.Views.Dialogs.ConfirmationDialog";
-            _typeNameTable[17] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[18] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[19] = "TPT_MMAS.Iot.Views.Dialogs.ErrorDialog";
-            _typeNameTable[20] = "String";
-            _typeNameTable[21] = "TPT_MMAS.Iot.Views.MainPage";
-            _typeNameTable[22] = "TPT_MMAS.Shared.Control.UserControls.TrayView";
-            _typeNameTable[23] = "Int32";
-            _typeNameTable[24] = "Windows.UI.Color";
-            _typeNameTable[25] = "System.ValueType";
-            _typeNameTable[26] = "Boolean";
-            _typeNameTable[27] = "TPT_MMAS.Iot.Views.PatientPage";
-            _typeNameTable[28] = "TPT_MMAS.Shared.Control.PatientGridView";
-            _typeNameTable[29] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[30] = "Double";
-            _typeNameTable[31] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[32] = "TPT_MMAS.Iot.Views.PatientsPage";
+            _typeNameTable[5] = "TPT_MMAS.Iot.Shell";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[8] = "TPT_MMAS.Iot.Views.MainPage";
 
-            _typeTable = new global::System.Type[33];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::TPT_MMAS.Iot.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::TPT_MMAS.Iot.ViewModel.MainViewModel);
+            _typeTable[2] = typeof(global::TPT_MMAS.Iot.ViewModel.ShellViewModel);
             _typeTable[3] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
-            _typeTable[5] = typeof(global::TPT_MMAS.Iot.ViewModel.ShellViewModel);
-            _typeTable[6] = typeof(global::TPT_MMAS.Shared.ViewModel.BaseViewModel);
-            _typeTable[7] = typeof(global::TPT_MMAS.Iot.ViewModel.DebuggingViewModel);
-            _typeTable[8] = typeof(global::TPT_MMAS.Iot.ViewModel.PatientViewModel);
-            _typeTable[9] = typeof(global::TPT_MMAS.Shared.ViewModel.PatientProfileViewModel);
-            _typeTable[10] = typeof(global::TPT_MMAS.Iot.ViewModel.PatientsViewModel);
-            _typeTable[11] = typeof(global::TPT_MMAS.Shared.ViewModel.PatientsViewModel);
-            _typeTable[12] = typeof(global::TPT_MMAS.Iot.Shell);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[15] = typeof(global::TPT_MMAS.Iot.Views.DebuggingPage);
-            _typeTable[16] = typeof(global::TPT_MMAS.Iot.Views.Dialogs.ConfirmationDialog);
-            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[18] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[19] = typeof(global::TPT_MMAS.Iot.Views.Dialogs.ErrorDialog);
-            _typeTable[20] = typeof(global::System.String);
-            _typeTable[21] = typeof(global::TPT_MMAS.Iot.Views.MainPage);
-            _typeTable[22] = typeof(global::TPT_MMAS.Shared.Control.UserControls.TrayView);
-            _typeTable[23] = typeof(global::System.Int32);
-            _typeTable[24] = typeof(global::Windows.UI.Color);
-            _typeTable[25] = typeof(global::System.ValueType);
-            _typeTable[26] = typeof(global::System.Boolean);
-            _typeTable[27] = typeof(global::TPT_MMAS.Iot.Views.PatientPage);
-            _typeTable[28] = typeof(global::TPT_MMAS.Shared.Control.PatientGridView);
-            _typeTable[29] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[30] = typeof(global::System.Double);
-            _typeTable[31] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[32] = typeof(global::TPT_MMAS.Iot.Views.PatientsPage);
+            _typeTable[5] = typeof(global::TPT_MMAS.Iot.Shell);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[8] = typeof(global::TPT_MMAS.Iot.Views.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -260,22 +212,9 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
         }
 
         private object Activate_0_ViewModelLocator() { return new global::TPT_MMAS.Iot.ViewModel.ViewModelLocator(); }
-        private object Activate_2_MainViewModel() { return new global::TPT_MMAS.Iot.ViewModel.MainViewModel(); }
+        private object Activate_2_ShellViewModel() { return new global::TPT_MMAS.Iot.ViewModel.ShellViewModel(); }
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
-        private object Activate_5_ShellViewModel() { return new global::TPT_MMAS.Iot.ViewModel.ShellViewModel(); }
-        private object Activate_6_BaseViewModel() { return new global::TPT_MMAS.Shared.ViewModel.BaseViewModel(); }
-        private object Activate_7_DebuggingViewModel() { return new global::TPT_MMAS.Iot.ViewModel.DebuggingViewModel(); }
-        private object Activate_8_PatientViewModel() { return new global::TPT_MMAS.Iot.ViewModel.PatientViewModel(); }
-        private object Activate_9_PatientProfileViewModel() { return new global::TPT_MMAS.Shared.ViewModel.PatientProfileViewModel(); }
-        private object Activate_10_PatientsViewModel() { return new global::TPT_MMAS.Iot.ViewModel.PatientsViewModel(); }
-        private object Activate_11_PatientsViewModel() { return new global::TPT_MMAS.Shared.ViewModel.PatientsViewModel(); }
-        private object Activate_15_DebuggingPage() { return new global::TPT_MMAS.Iot.Views.DebuggingPage(); }
-        private object Activate_19_ErrorDialog() { return new global::TPT_MMAS.Iot.Views.Dialogs.ErrorDialog(); }
-        private object Activate_21_MainPage() { return new global::TPT_MMAS.Iot.Views.MainPage(); }
-        private object Activate_22_TrayView() { return new global::TPT_MMAS.Shared.Control.UserControls.TrayView(); }
-        private object Activate_27_PatientPage() { return new global::TPT_MMAS.Iot.Views.PatientPage(); }
-        private object Activate_28_PatientGridView() { return new global::TPT_MMAS.Shared.Control.PatientGridView(); }
-        private object Activate_32_PatientsPage() { return new global::TPT_MMAS.Iot.Views.PatientsPage(); }
+        private object Activate_8_MainPage() { return new global::TPT_MMAS.Iot.Views.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -290,11 +229,7 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
             case 0:   //  TPT_MMAS.Iot.ViewModel.ViewModelLocator
                 userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ViewModelLocator;
-                userType.AddMemberName("Main");
                 userType.AddMemberName("Shell");
-                userType.AddMemberName("Debugging");
-                userType.AddMemberName("Patient");
-                userType.AddMemberName("Patients");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -303,7 +238,7 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
                 xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  TPT_MMAS.Iot.ViewModel.MainViewModel
+            case 2:   //  TPT_MMAS.Iot.ViewModel.ShellViewModel
                 userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -321,168 +256,23 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  TPT_MMAS.Iot.ViewModel.ShellViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 6:   //  TPT_MMAS.Shared.ViewModel.BaseViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
-                userType.Activator = Activate_6_BaseViewModel;
-                xamlType = userType;
-                break;
-
-            case 7:   //  TPT_MMAS.Iot.ViewModel.DebuggingViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 8:   //  TPT_MMAS.Iot.ViewModel.PatientViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.PatientProfileViewModel"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 9:   //  TPT_MMAS.Shared.ViewModel.PatientProfileViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.Activator = Activate_9_PatientProfileViewModel;
-                xamlType = userType;
-                break;
-
-            case 10:   //  TPT_MMAS.Iot.ViewModel.PatientsViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.PatientsViewModel"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 11:   //  TPT_MMAS.Shared.ViewModel.PatientsViewModel
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.Activator = Activate_11_PatientsViewModel;
-                xamlType = userType;
-                break;
-
-            case 12:   //  TPT_MMAS.Iot.Shell
+            case 5:   //  TPT_MMAS.Iot.Shell
                 userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Windows.UI.Xaml.Controls.Page
+            case 6:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Windows.UI.Xaml.Controls.UserControl
+            case 7:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  TPT_MMAS.Iot.Views.DebuggingPage
+            case 8:   //  TPT_MMAS.Iot.Views.MainPage
                 userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_DebuggingPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 16:   //  TPT_MMAS.Iot.Views.Dialogs.ConfirmationDialog
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 17:   //  Windows.UI.Xaml.Controls.ContentDialog
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 18:   //  Windows.UI.Xaml.Controls.ContentControl
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 19:   //  TPT_MMAS.Iot.Views.Dialogs.ErrorDialog
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_19_ErrorDialog;
-                userType.AddMemberName("ErrorMessage");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  String
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 21:   //  TPT_MMAS.Iot.Views.MainPage
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 22:   //  TPT_MMAS.Shared.Control.UserControls.TrayView
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_22_TrayView;
-                userType.AddMemberName("SelectedContainer");
-                userType.AddMemberName("SelectedBackgroundColor");
-                userType.AddMemberName("IsContainerProperlyLoaded");
-                xamlType = userType;
-                break;
-
-            case 23:   //  Int32
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 24:   //  Windows.UI.Color
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 25:   //  System.ValueType
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                xamlType = userType;
-                break;
-
-            case 26:   //  Boolean
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 27:   //  TPT_MMAS.Iot.Views.PatientPage
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_27_PatientPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 28:   //  TPT_MMAS.Shared.Control.PatientGridView
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_28_PatientGridView;
-                userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("ItemColumns");
-                userType.AddMemberName("ItemRows");
-                userType.AddMemberName("ItemHeight");
-                userType.AddMemberName("ItemTemplate");
-                userType.AddMemberName("ItemWidth");
-                xamlType = userType;
-                break;
-
-            case 29:   //  Windows.UI.Xaml.Controls.Control
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 30:   //  Double
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 31:   //  Windows.UI.Xaml.DataTemplate
-                xamlType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 32:   //  TPT_MMAS.Iot.Views.PatientsPage
-                userType = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_32_PatientsPage;
+                userType.Activator = Activate_8_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -545,130 +335,10 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
             return foundXamlType;
         }
 
-        private object get_0_ViewModelLocator_Main(object instance)
-        {
-            var that = (global::TPT_MMAS.Iot.ViewModel.ViewModelLocator)instance;
-            return that.Main;
-        }
-        private object get_1_ViewModelLocator_Shell(object instance)
+        private object get_0_ViewModelLocator_Shell(object instance)
         {
             var that = (global::TPT_MMAS.Iot.ViewModel.ViewModelLocator)instance;
             return that.Shell;
-        }
-        private object get_2_ViewModelLocator_Debugging(object instance)
-        {
-            var that = (global::TPT_MMAS.Iot.ViewModel.ViewModelLocator)instance;
-            return that.Debugging;
-        }
-        private object get_3_ViewModelLocator_Patient(object instance)
-        {
-            var that = (global::TPT_MMAS.Iot.ViewModel.ViewModelLocator)instance;
-            return that.Patient;
-        }
-        private object get_4_ViewModelLocator_Patients(object instance)
-        {
-            var that = (global::TPT_MMAS.Iot.ViewModel.ViewModelLocator)instance;
-            return that.Patients;
-        }
-        private object get_5_ErrorDialog_ErrorMessage(object instance)
-        {
-            var that = (global::TPT_MMAS.Iot.Views.Dialogs.ErrorDialog)instance;
-            return that.ErrorMessage;
-        }
-        private void set_5_ErrorDialog_ErrorMessage(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Iot.Views.Dialogs.ErrorDialog)instance;
-            that.ErrorMessage = (global::System.String)Value;
-        }
-        private object get_6_TrayView_SelectedContainer(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.SelectedContainer;
-        }
-        private void set_6_TrayView_SelectedContainer(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.SelectedContainer = (global::System.Int32)Value;
-        }
-        private object get_7_TrayView_SelectedBackgroundColor(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.SelectedBackgroundColor;
-        }
-        private void set_7_TrayView_SelectedBackgroundColor(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.SelectedBackgroundColor = (global::Windows.UI.Color)Value;
-        }
-        private object get_8_TrayView_IsContainerProperlyLoaded(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.IsContainerProperlyLoaded;
-        }
-        private void set_8_TrayView_IsContainerProperlyLoaded(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.IsContainerProperlyLoaded = (global::System.Boolean)Value;
-        }
-        private object get_9_PatientGridView_ItemsSource(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemsSource;
-        }
-        private void set_9_PatientGridView_ItemsSource(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemsSource = (global::System.Object)Value;
-        }
-        private object get_10_PatientGridView_ItemColumns(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemColumns;
-        }
-        private void set_10_PatientGridView_ItemColumns(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemColumns = (global::System.Int32)Value;
-        }
-        private object get_11_PatientGridView_ItemRows(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemRows;
-        }
-        private void set_11_PatientGridView_ItemRows(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemRows = (global::System.Int32)Value;
-        }
-        private object get_12_PatientGridView_ItemHeight(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemHeight;
-        }
-        private void set_12_PatientGridView_ItemHeight(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemHeight = (global::System.Double)Value;
-        }
-        private object get_13_PatientGridView_ItemTemplate(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemTemplate;
-        }
-        private void set_13_PatientGridView_ItemTemplate(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_14_PatientGridView_ItemWidth(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemWidth;
-        }
-        private void set_14_PatientGridView_ItemWidth(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemWidth = (global::System.Double)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -678,101 +348,11 @@ namespace TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "TPT_MMAS.Iot.ViewModel.ViewModelLocator.Main":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "Main", "TPT_MMAS.Iot.ViewModel.MainViewModel");
-                xamlMember.Getter = get_0_ViewModelLocator_Main;
-                xamlMember.SetIsReadOnly();
-                break;
             case "TPT_MMAS.Iot.ViewModel.ViewModelLocator.Shell":
                 userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.ViewModel.ViewModelLocator");
                 xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "Shell", "TPT_MMAS.Iot.ViewModel.ShellViewModel");
-                xamlMember.Getter = get_1_ViewModelLocator_Shell;
+                xamlMember.Getter = get_0_ViewModelLocator_Shell;
                 xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Iot.ViewModel.ViewModelLocator.Debugging":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "Debugging", "TPT_MMAS.Iot.ViewModel.DebuggingViewModel");
-                xamlMember.Getter = get_2_ViewModelLocator_Debugging;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Iot.ViewModel.ViewModelLocator.Patient":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "Patient", "TPT_MMAS.Iot.ViewModel.PatientViewModel");
-                xamlMember.Getter = get_3_ViewModelLocator_Patient;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Iot.ViewModel.ViewModelLocator.Patients":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "Patients", "TPT_MMAS.Iot.ViewModel.PatientsViewModel");
-                xamlMember.Getter = get_4_ViewModelLocator_Patients;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Iot.Views.Dialogs.ErrorDialog.ErrorMessage":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Iot.Views.Dialogs.ErrorDialog");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ErrorMessage", "String");
-                xamlMember.Getter = get_5_ErrorDialog_ErrorMessage;
-                xamlMember.Setter = set_5_ErrorDialog_ErrorMessage;
-                break;
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.SelectedContainer":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "SelectedContainer", "Int32");
-                xamlMember.Getter = get_6_TrayView_SelectedContainer;
-                xamlMember.Setter = set_6_TrayView_SelectedContainer;
-                break;
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.SelectedBackgroundColor":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "SelectedBackgroundColor", "Windows.UI.Color");
-                xamlMember.Getter = get_7_TrayView_SelectedBackgroundColor;
-                xamlMember.Setter = set_7_TrayView_SelectedBackgroundColor;
-                break;
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.IsContainerProperlyLoaded":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "IsContainerProperlyLoaded", "Boolean");
-                xamlMember.Getter = get_8_TrayView_IsContainerProperlyLoaded;
-                xamlMember.Setter = set_8_TrayView_IsContainerProperlyLoaded;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemsSource":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_PatientGridView_ItemsSource;
-                xamlMember.Setter = set_9_PatientGridView_ItemsSource;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemColumns":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemColumns", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_PatientGridView_ItemColumns;
-                xamlMember.Setter = set_10_PatientGridView_ItemColumns;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemRows":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemRows", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_PatientGridView_ItemRows;
-                xamlMember.Setter = set_11_PatientGridView_ItemRows;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemHeight":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemHeight", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_PatientGridView_ItemHeight;
-                xamlMember.Setter = set_12_PatientGridView_ItemHeight;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemTemplate":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_PatientGridView_ItemTemplate;
-                xamlMember.Setter = set_13_PatientGridView_ItemTemplate;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemWidth":
-                userType = (global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Iot.TPT_MMAS_Iot_XamlTypeInfo.XamlMember(this, "ItemWidth", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_PatientGridView_ItemWidth;
-                xamlMember.Setter = set_14_PatientGridView_ItemWidth;
                 break;
             }
             return xamlMember;

@@ -10,6 +10,7 @@
     DataContext="{Binding Debugging, Source={StaticResource Locator}}">
 
     <Page.Resources>
+
         <Style TargetType="ToggleButton" x:Key="TrayToggleButtonStyle">
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
@@ -17,11 +18,11 @@
             <Setter Property="Grid.ColumnSpan" Value="3" />
         </Style>
         <Style TargetType="Grid" x:Key="TurnOnCounterGridStyle">
-            <Setter Property="Background" Value="#FF3C177C" />
+            <Setter Property="Background" Value="#FFE8E8E8" />
             <Setter Property="Grid.Row" Value="1" />
         </Style>
         <Style TargetType="Grid" x:Key="TurnOffCounterGridStyle">
-            <Setter Property="Background" Value="#FF4E19AA" />
+            <Setter Property="Background" Value="#FFF1F1F1" />
             <Setter Property="Grid.Row" Value="1" />
             <Setter Property="Grid.Column" Value="2" />
         </Style>
@@ -264,17 +265,10 @@
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="tb_rfdata" Text="{x:Bind VM.ScannedData, Mode=OneWay, FallbackValue='error', TargetNullValue='scan now'}" 
                                FontSize="36" HorizontalAlignment="Center"/>
-                    <ToggleButton x:Name="btn_scanStatus" Content="Scanning Status" HorizontalAlignment="Center" Margin="0,20" FontSize="20" IsChecked="{x:Bind VM.IsScanningEnabled, Mode=TwoWay}" />
-                    <!--<Button x:Name="btn_rfredo" Content="scan again" IsEnabled="False"
+                    <Button x:Name="btn_rfredo" Content="scan again" IsEnabled="False"
                             Click="btn_rfredo_Click" Visibility="Collapsed"
-                            HorizontalAlignment="Center" Margin="0,20"/>-->
+                            HorizontalAlignment="Center" Margin="0,20"/>
                     <!--<ToggleButton x:Name="tbtn_scanSwitch" Content="Switch RF scanning" Margin="0,20" IsChecked="{x:Bind VM.IsRfScanningEnabled}"/>-->
-                </StackPanel>
-            </PivotItem>
-            <PivotItem Header="SoundCheck">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <MediaElement x:Name="me_soundCheck" Height="40" Width="200" Source="ms-appx:///Assets/SoundCheck.mp3" AudioCategory="ForegroundOnlyMedia" AutoPlay="False" AreTransportControlsEnabled="True" MediaEnded="OnMediaPlayerMediaEnded"/>
-                    <ToggleButton x:Name="tbtn_playback" Content="Play" Checked="OnSoundCheckPlayButtonCheckedChanged" Unchecked="OnSoundCheckPlayButtonCheckedChanged" FontSize="24" Padding="20 12" />
                 </StackPanel>
             </PivotItem>
         </Pivot>

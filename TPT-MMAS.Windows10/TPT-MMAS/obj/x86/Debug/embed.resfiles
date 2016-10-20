@@ -2,13 +2,8 @@ App.xbf
 Shell.xbf
 Styles\ShellStyles.xbf
 View\DebugPage.xbf
-View\Devices\DevicesRegisterPage.xbf
-View\Dialog\AddMedicineDialog.xbf
-View\Dialog\AddPrescriptionDialog.xbf
-View\Dialog\LoginDialog.xbf
-View\LicensesPage.xbf
-View\LoginPage.xbf
+View\IoT\IotShell.xbf
 View\MedicinesPage.xbf
 View\PatientProfilePage.xbf
 View\PatientsPage.xbf
-View\SettingsPage.xbf
+View\SystemsPage.xbf

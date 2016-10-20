@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
 namespace TPT_MMAS.Shared.Converter
 {
-    /// <summary>
-    /// Converts a boolean value to a visibility enum value: true returns a Visible property, false otherwise.
-    /// 
-    /// Adding "false" into the converter parameter reverses the result.
-    /// </summary>
     public class BooleanToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)

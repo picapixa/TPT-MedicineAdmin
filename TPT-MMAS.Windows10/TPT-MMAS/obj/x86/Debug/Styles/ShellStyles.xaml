@@ -3,8 +3,6 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:local="using:TPT_MMAS.Shared.Styles" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
 
-	<SolidColorBrush x:Key="SplashScreenBackgroundBrush" Color="{StaticResource TPTAppSplashColor}" />
-
 	<SolidColorBrush x:Key="SplitViewBackgroundBrush" Color="{StaticResource TPTAppPrimaryColor}" />
 	<SolidColorBrush x:Key="SplitViewForegroundBrush" Color="White" />
 	<SolidColorBrush x:Key="NavButtonPressedBackgroundBrush" Color="{ThemeResource SystemListMediumColor}" />
@@ -202,11 +200,10 @@
 								<Rectangle x:Name="PressedBackground" Visibility="Collapsed" Fill="{StaticResource NavButtonPressedBackgroundBrush}"/>
 								<Rectangle x:Name="HoverBackground" Visibility="Collapsed" Fill="{StaticResource NavButtonHoverBackgroundBrush}"/>
 							</Grid>
-							<Grid x:Name="CheckedBackground" Grid.ColumnSpan="4" Visibility="Collapsed">
+							<Grid x:Name="CheckedBackground" Grid.ColumnSpan="4" Visibility="Collapsed" Background="{StaticResource NavButtonCheckedBackgroundBrush}">
 								<Rectangle x:Name="CheckedPressedBackground" Visibility="Collapsed" Fill="{StaticResource NavButtonCheckedPressedBackgroundBrush}"/>
 								<Rectangle x:Name="CheckedHoverBackground" Visibility="Collapsed" Fill="{StaticResource NavButtonCheckedHoverBackgroundBrush}"/>
-                                <Rectangle Width="4" Fill="White" HorizontalAlignment="Left"/>
-                            </Grid>
+							</Grid>
 
 							<!-- focus -->
 							<Rectangle x:Name="FocusVisualWhite" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashOffset="1.5" Style="{StaticResource FocusVisual}" />
@@ -232,6 +229,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
+
 
 </ResourceDictionary>
 

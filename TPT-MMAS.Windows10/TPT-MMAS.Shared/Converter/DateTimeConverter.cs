@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.UI.Xaml.Data;
 
 namespace TPT_MMAS.Shared.Converter
 {
-    /// <summary>
-    /// Converts a string value to its equivalent DateTime object.
-    /// </summary>
     public class DateTimeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)

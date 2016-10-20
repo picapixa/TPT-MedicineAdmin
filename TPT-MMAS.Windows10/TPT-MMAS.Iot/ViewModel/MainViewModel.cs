@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPT_MMAS.Iot.Presenters;
 using TPT_MMAS.Shared.Interface;
-using TPT_MMAS.Shared.Presenters;
 
 namespace TPT_MMAS.Iot.ViewModel
 {

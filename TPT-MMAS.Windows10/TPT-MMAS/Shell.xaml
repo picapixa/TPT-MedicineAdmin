@@ -5,8 +5,7 @@
     xmlns:local="using:TPT_MMAS"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" RequestedTheme="Light"
-    DataContext="{Binding Shell, Source={StaticResource Locator}}">
+    mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="AccountButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -32,24 +31,14 @@
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="PointerOver">
-                                        <VisualState.Setters>
-                                            <Setter Target="rect_pointerOver.(Shape.Fill)">
-                                                <Setter.Value>
-                                                    <SolidColorBrush Color="Black"/>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Setter Target="rect_pointerOver.(UIElement.Visibility)" Value="Visible"/>
-                                        </VisualState.Setters>
                                         <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <SolidColorBrush Color="White"/>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
                                             </ObjectAnimationUsingKeyFrames>
                                             <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
-                                            <ColorAnimation Duration="0" To="#66000000" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rect_pointerOver" d:IsOptimized="True"/>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
@@ -61,12 +50,9 @@
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
                                             </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <SolidColorBrush Color="White"/>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
                                             </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Disabled">
@@ -90,9 +76,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Rectangle x:Name="rect_pointerOver" Visibility="Collapsed" Grid.ColumnSpan="2" Fill="#66000000" Opacity="0.2" />
-
-                            <ContentPresenter Content="{TemplateBinding Tag}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe MDL2 Assets" />
+                            <ContentPresenter Content="{TemplateBinding Tag}" />
 
                             <ContentPresenter Grid.Column="1"  x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Grid>
@@ -102,34 +86,18 @@
         </Style>
     </Page.Resources>
 
-    <SplitView x:Name="ShellSplitView" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" PaneBackground="{ThemeResource SplitViewBackgroundBrush}" 
-               IsPaneOpen="False" OpenPaneLength="320" 
-               DisplayMode="CompactOverlay">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="WindowSizeStates">
-                <VisualState x:Name="MobileState"/>
-                <VisualState x:Name="TabletState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="ShellSplitView.(SplitView.DisplayMode)" Value="CompactInline"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="DesktopState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="1024" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="ShellSplitView.(SplitView.DisplayMode)" Value="CompactInline"/>
-                        <Setter Target="ShellSplitView.(SplitView.IsPaneOpen)" Value="True"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+    <SplitView x:Name="ShellSplitView" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" PaneBackground="{ThemeResource SplitViewBackgroundBrush}" IsPaneOpen="True" OpenPaneLength="320" DisplayMode="CompactInline">
         <SplitView.Pane>
             <RelativePanel>
-                
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="48" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>-->
+
                 <Grid x:Name="Grid_Hamburger" Height="48"
                       RelativePanel.AlignTopWithPanel="True"
                       RelativePanel.AlignLeftWithPanel="True"
@@ -146,31 +114,39 @@
                             RelativePanel.AlignRightWithPanel="True">
                     <RadioButton GroupName="ShellNav" Click="OnNavButtonClick" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE716;"  x:Name="RB_Patients" Content="Patients" />
                     <RadioButton GroupName="ShellNav" Click="OnNavButtonClick" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE7B8;"  x:Name="RB_Medicines" Content="Medicines" />
-                    <RadioButton GroupName="ShellNav" Click="OnNavButtonClick" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE713;" x:Name="RB_Settings" Content="Settings"/>
+                    <RadioButton GroupName="ShellNav" Click="OnNavButtonClick" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE957;"  x:Name="RB_Systems" Content="Systems" />
+                    <RadioButton GroupName="ShellNav" Click="OnNavButtonClick" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE950;" x:Name="RB_Debug" Content="Debug Mode" />
                 </StackPanel>
                 <Grid x:Name="Grid_Settings"
                             RelativePanel.AlignLeftWithPanel="True"
                             RelativePanel.AlignRightWithPanel="True"
                             RelativePanel.AlignBottomWithPanel="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="btn_account" Style="{StaticResource AccountButtonStyle}" Tag="&#58031;"
+                    <Button x:Name="btn_account" Style="{StaticResource AccountButtonStyle}"
                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left"
                             Foreground="White">
-                        <Button.Flyout>
-                            <MenuFlyout>
-                                <MenuFlyoutItem Text="Settings" IsEnabled="False" />
-                                <MenuFlyoutSeparator />
-                                <MenuFlyoutItem Text="Logout" Width="300" Click="OnLogoutButtonClick" />
-                            </MenuFlyout>
-                        </Button.Flyout>
-                        <StackPanel>
-                            <TextBlock Text="{x:Bind CurrentUser.FirstLastName, Mode=OneWay, FallbackValue=SAMPLE USER}" FontSize="18" FontWeight="Bold" />
-                            <TextBlock Text="{x:Bind CurrentUser.Title, Mode=OneWay, FallbackValue=Administrator}" FontSize="11.25"/>
-                        </StackPanel>
+                        <Button.Tag>
+                            <Grid>
+                                <!-- place image here. -->
+                            </Grid>
+                        </Button.Tag>
+                        <Button.Content>
+                            <StackPanel>
+                                <TextBlock Text="SAMPLE USER" FontSize="18" FontWeight="Bold" />
+                                <TextBlock Text="Administrator" FontSize="11.25"/>
+                            </StackPanel>
+                        </Button.Content>
                     </Button>
+                    <Button x:Name="btn_settings" Grid.Column="1"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                            FontFamily="Segoe MDL2 Assets">&#59155;</Button>
                 </Grid>
             </RelativePanel>
         </SplitView.Pane>

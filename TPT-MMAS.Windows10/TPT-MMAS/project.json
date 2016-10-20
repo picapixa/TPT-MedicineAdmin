@@ -1,6 +1,7 @@
 ﻿{
   "dependencies": {
     "CommonServiceLocator": "1.3.0",
+    "IotWeb": "0.8.6",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "MVVMLightLibs": "5.2.0",
     "Newtonsoft.Json": "8.0.3",

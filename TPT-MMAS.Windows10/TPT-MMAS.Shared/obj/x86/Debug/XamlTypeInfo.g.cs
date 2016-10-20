@@ -133,57 +133,17 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[24];
-            _typeNameTable[0] = "TPT_MMAS.Shared.Control.UserControls.TrayView";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[2] = "Int32";
-            _typeNameTable[3] = "Windows.UI.Color";
-            _typeNameTable[4] = "System.ValueType";
-            _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "Boolean";
-            _typeNameTable[7] = "TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter";
-            _typeNameTable[8] = "TPT_MMAS.Shared.Converter.DateTimeConverter";
-            _typeNameTable[9] = "TPT_MMAS.Shared.Converter.IntegerToBooleanConverter";
-            _typeNameTable[10] = "TPT_MMAS.Shared.Converter.IntegerToVisibilityConverter";
-            _typeNameTable[11] = "TPT_MMAS.Shared.Converter.MedsFilterEnumToStringConverter";
-            _typeNameTable[12] = "TPT_MMAS.Shared.Converter.NullToBooleanConverter";
-            _typeNameTable[13] = "TPT_MMAS.Shared.Converter.NullToVisibilityConverter";
-            _typeNameTable[14] = "TPT_MMAS.Shared.Converter.Humanizr.PluralizeConverter";
-            _typeNameTable[15] = "TPT_MMAS.Shared.Converter.Humanizr.PluralizeUppercasedConverter";
-            _typeNameTable[16] = "TPT_MMAS.Shared.Converter.Humanizr.RelativeDateTimeConverter";
-            _typeNameTable[17] = "TPT_MMAS.Shared.Converter.Humanizr.QuantityConverter";
-            _typeNameTable[18] = "Byte";
-            _typeNameTable[19] = "TPT_MMAS.Shared.Control.PatientGridView";
-            _typeNameTable[20] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[21] = "Double";
-            _typeNameTable[22] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[23] = "TPT_MMAS.Shared.Control.Iterator";
+            _typeNameTable = new string[4];
+            _typeNameTable[0] = "Windows.UI.Color";
+            _typeNameTable[1] = "System.ValueType";
+            _typeNameTable[2] = "Object";
+            _typeNameTable[3] = "Byte";
 
-            _typeTable = new global::System.Type[24];
-            _typeTable[0] = typeof(global::TPT_MMAS.Shared.Control.UserControls.TrayView);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[2] = typeof(global::System.Int32);
-            _typeTable[3] = typeof(global::Windows.UI.Color);
-            _typeTable[4] = typeof(global::System.ValueType);
-            _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::System.Boolean);
-            _typeTable[7] = typeof(global::TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter);
-            _typeTable[8] = typeof(global::TPT_MMAS.Shared.Converter.DateTimeConverter);
-            _typeTable[9] = typeof(global::TPT_MMAS.Shared.Converter.IntegerToBooleanConverter);
-            _typeTable[10] = typeof(global::TPT_MMAS.Shared.Converter.IntegerToVisibilityConverter);
-            _typeTable[11] = typeof(global::TPT_MMAS.Shared.Converter.MedsFilterEnumToStringConverter);
-            _typeTable[12] = typeof(global::TPT_MMAS.Shared.Converter.NullToBooleanConverter);
-            _typeTable[13] = typeof(global::TPT_MMAS.Shared.Converter.NullToVisibilityConverter);
-            _typeTable[14] = typeof(global::TPT_MMAS.Shared.Converter.Humanizr.PluralizeConverter);
-            _typeTable[15] = typeof(global::TPT_MMAS.Shared.Converter.Humanizr.PluralizeUppercasedConverter);
-            _typeTable[16] = typeof(global::TPT_MMAS.Shared.Converter.Humanizr.RelativeDateTimeConverter);
-            _typeTable[17] = typeof(global::TPT_MMAS.Shared.Converter.Humanizr.QuantityConverter);
-            _typeTable[18] = typeof(global::System.Byte);
-            _typeTable[19] = typeof(global::TPT_MMAS.Shared.Control.PatientGridView);
-            _typeTable[20] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[21] = typeof(global::System.Double);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[23] = typeof(global::TPT_MMAS.Shared.Control.Iterator);
+            _typeTable = new global::System.Type[4];
+            _typeTable[0] = typeof(global::Windows.UI.Color);
+            _typeTable[1] = typeof(global::System.ValueType);
+            _typeTable[2] = typeof(global::System.Object);
+            _typeTable[3] = typeof(global::System.Byte);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -218,20 +178,6 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_TrayView() { return new global::TPT_MMAS.Shared.Control.UserControls.TrayView(); }
-        private object Activate_7_BooleanToVisibilityConverter() { return new global::TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter(); }
-        private object Activate_8_DateTimeConverter() { return new global::TPT_MMAS.Shared.Converter.DateTimeConverter(); }
-        private object Activate_9_IntegerToBooleanConverter() { return new global::TPT_MMAS.Shared.Converter.IntegerToBooleanConverter(); }
-        private object Activate_10_IntegerToVisibilityConverter() { return new global::TPT_MMAS.Shared.Converter.IntegerToVisibilityConverter(); }
-        private object Activate_11_MedsFilterEnumToStringConverter() { return new global::TPT_MMAS.Shared.Converter.MedsFilterEnumToStringConverter(); }
-        private object Activate_12_NullToBooleanConverter() { return new global::TPT_MMAS.Shared.Converter.NullToBooleanConverter(); }
-        private object Activate_13_NullToVisibilityConverter() { return new global::TPT_MMAS.Shared.Converter.NullToVisibilityConverter(); }
-        private object Activate_14_PluralizeConverter() { return new global::TPT_MMAS.Shared.Converter.Humanizr.PluralizeConverter(); }
-        private object Activate_15_PluralizeUppercasedConverter() { return new global::TPT_MMAS.Shared.Converter.Humanizr.PluralizeUppercasedConverter(); }
-        private object Activate_16_RelativeDateTimeConverter() { return new global::TPT_MMAS.Shared.Converter.Humanizr.RelativeDateTimeConverter(); }
-        private object Activate_17_QuantityConverter() { return new global::TPT_MMAS.Shared.Converter.Humanizr.QuantityConverter(); }
-        private object Activate_19_PatientGridView() { return new global::TPT_MMAS.Shared.Control.PatientGridView(); }
-        private object Activate_23_Iterator() { return new global::TPT_MMAS.Shared.Control.Iterator(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -243,25 +189,7 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  TPT_MMAS.Shared.Control.UserControls.TrayView
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_0_TrayView;
-                userType.AddMemberName("SelectedContainer");
-                userType.AddMemberName("SelectedBackgroundColor");
-                userType.AddMemberName("ContainerHasItem");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 1:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 2:   //  Int32
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 3:   //  Windows.UI.Color
+            case 0:   //  Windows.UI.Color
                 userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.AddMemberName("A");
                 userType.AddMemberName("B");
@@ -270,136 +198,18 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  System.ValueType
+            case 1:   //  System.ValueType
                 userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 5:   //  Object
+            case 2:   //  Object
                 xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Boolean
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_7_BooleanToVisibilityConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 8:   //  TPT_MMAS.Shared.Converter.DateTimeConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_8_DateTimeConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 9:   //  TPT_MMAS.Shared.Converter.IntegerToBooleanConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_IntegerToBooleanConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 10:   //  TPT_MMAS.Shared.Converter.IntegerToVisibilityConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_10_IntegerToVisibilityConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 11:   //  TPT_MMAS.Shared.Converter.MedsFilterEnumToStringConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_11_MedsFilterEnumToStringConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 12:   //  TPT_MMAS.Shared.Converter.NullToBooleanConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_12_NullToBooleanConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 13:   //  TPT_MMAS.Shared.Converter.NullToVisibilityConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_13_NullToVisibilityConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 14:   //  TPT_MMAS.Shared.Converter.Humanizr.PluralizeConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_14_PluralizeConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 15:   //  TPT_MMAS.Shared.Converter.Humanizr.PluralizeUppercasedConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_15_PluralizeUppercasedConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 16:   //  TPT_MMAS.Shared.Converter.Humanizr.RelativeDateTimeConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_16_RelativeDateTimeConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 17:   //  TPT_MMAS.Shared.Converter.Humanizr.QuantityConverter
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_17_QuantityConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 18:   //  Byte
+            case 3:   //  Byte
                 userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 19:   //  TPT_MMAS.Shared.Control.PatientGridView
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_19_PatientGridView;
-                userType.AddMemberName("ItemColumns");
-                userType.AddMemberName("ItemHeight");
-                userType.AddMemberName("ItemRows");
-                userType.AddMemberName("ItemTemplate");
-                userType.AddMemberName("ItemWidth");
-                userType.AddMemberName("ItemsSource");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  Windows.UI.Xaml.Controls.Control
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 21:   //  Double
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 22:   //  Windows.UI.Xaml.DataTemplate
-                xamlType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 23:   //  TPT_MMAS.Shared.Control.Iterator
-                userType = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_23_Iterator;
-                userType.AddMemberName("Header");
-                userType.AddMemberName("HeaderTemplate");
-                userType.AddMemberName("MinValue");
-                userType.AddMemberName("MaxValue");
-                userType.AddMemberName("Value");
-                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
             }
@@ -407,185 +217,45 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
         }
 
 
-        private object get_0_TrayView_SelectedContainer(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.SelectedContainer;
-        }
-        private void set_0_TrayView_SelectedContainer(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.SelectedContainer = (global::System.Int32)Value;
-        }
-        private object get_1_TrayView_SelectedBackgroundColor(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.SelectedBackgroundColor;
-        }
-        private void set_1_TrayView_SelectedBackgroundColor(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.SelectedBackgroundColor = (global::Windows.UI.Color)Value;
-        }
-        private object get_2_TrayView_ContainerHasItem(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            return that.ContainerHasItem;
-        }
-        private void set_2_TrayView_ContainerHasItem(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.UserControls.TrayView)instance;
-            that.ContainerHasItem = (global::System.Boolean)Value;
-        }
-        private object get_3_Color_A(object instance)
+        private object get_0_Color_A(object instance)
         {
             var that = (global::Windows.UI.Color)instance;
             return that.A;
         }
-        private void set_3_Color_A(object instance, object Value)
+        private void set_0_Color_A(object instance, object Value)
         {
             var that = (global::Windows.UI.Color)instance;
             that.A = (global::System.Byte)Value;
         }
-        private object get_4_Color_B(object instance)
+        private object get_1_Color_B(object instance)
         {
             var that = (global::Windows.UI.Color)instance;
             return that.B;
         }
-        private void set_4_Color_B(object instance, object Value)
+        private void set_1_Color_B(object instance, object Value)
         {
             var that = (global::Windows.UI.Color)instance;
             that.B = (global::System.Byte)Value;
         }
-        private object get_5_Color_G(object instance)
+        private object get_2_Color_G(object instance)
         {
             var that = (global::Windows.UI.Color)instance;
             return that.G;
         }
-        private void set_5_Color_G(object instance, object Value)
+        private void set_2_Color_G(object instance, object Value)
         {
             var that = (global::Windows.UI.Color)instance;
             that.G = (global::System.Byte)Value;
         }
-        private object get_6_Color_R(object instance)
+        private object get_3_Color_R(object instance)
         {
             var that = (global::Windows.UI.Color)instance;
             return that.R;
         }
-        private void set_6_Color_R(object instance, object Value)
+        private void set_3_Color_R(object instance, object Value)
         {
             var that = (global::Windows.UI.Color)instance;
             that.R = (global::System.Byte)Value;
-        }
-        private object get_7_PatientGridView_ItemColumns(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemColumns;
-        }
-        private void set_7_PatientGridView_ItemColumns(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemColumns = (global::System.Int32)Value;
-        }
-        private object get_8_PatientGridView_ItemHeight(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemHeight;
-        }
-        private void set_8_PatientGridView_ItemHeight(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemHeight = (global::System.Double)Value;
-        }
-        private object get_9_PatientGridView_ItemRows(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemRows;
-        }
-        private void set_9_PatientGridView_ItemRows(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemRows = (global::System.Int32)Value;
-        }
-        private object get_10_PatientGridView_ItemTemplate(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemTemplate;
-        }
-        private void set_10_PatientGridView_ItemTemplate(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_11_PatientGridView_ItemWidth(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemWidth;
-        }
-        private void set_11_PatientGridView_ItemWidth(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemWidth = (global::System.Double)Value;
-        }
-        private object get_12_PatientGridView_ItemsSource(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemsSource;
-        }
-        private void set_12_PatientGridView_ItemsSource(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemsSource = (global::System.Object)Value;
-        }
-        private object get_13_Iterator_Header(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.Header;
-        }
-        private void set_13_Iterator_Header(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.Header = (global::System.Object)Value;
-        }
-        private object get_14_Iterator_HeaderTemplate(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.HeaderTemplate;
-        }
-        private void set_14_Iterator_HeaderTemplate(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.HeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_15_Iterator_MinValue(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.MinValue;
-        }
-        private void set_15_Iterator_MinValue(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.MinValue = (global::System.Int32)Value;
-        }
-        private object get_16_Iterator_MaxValue(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.MaxValue;
-        }
-        private void set_16_Iterator_MaxValue(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.MaxValue = (global::System.Int32)Value;
-        }
-        private object get_17_Iterator_Value(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.Value;
-        }
-        private void set_17_Iterator_Value(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.Value = (global::System.Int32)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -595,124 +265,29 @@ namespace TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.SelectedContainer":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "SelectedContainer", "Int32");
-                xamlMember.Getter = get_0_TrayView_SelectedContainer;
-                xamlMember.Setter = set_0_TrayView_SelectedContainer;
-                break;
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.SelectedBackgroundColor":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "SelectedBackgroundColor", "Windows.UI.Color");
-                xamlMember.Getter = get_1_TrayView_SelectedBackgroundColor;
-                xamlMember.Setter = set_1_TrayView_SelectedBackgroundColor;
-                break;
-            case "TPT_MMAS.Shared.Control.UserControls.TrayView.ContainerHasItem":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.UserControls.TrayView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ContainerHasItem", "Boolean");
-                xamlMember.Getter = get_2_TrayView_ContainerHasItem;
-                xamlMember.Setter = set_2_TrayView_ContainerHasItem;
-                break;
             case "Windows.UI.Color.A":
                 userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.UI.Color");
                 xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "A", "Byte");
-                xamlMember.Getter = get_3_Color_A;
-                xamlMember.Setter = set_3_Color_A;
+                xamlMember.Getter = get_0_Color_A;
+                xamlMember.Setter = set_0_Color_A;
                 break;
             case "Windows.UI.Color.B":
                 userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.UI.Color");
                 xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "B", "Byte");
-                xamlMember.Getter = get_4_Color_B;
-                xamlMember.Setter = set_4_Color_B;
+                xamlMember.Getter = get_1_Color_B;
+                xamlMember.Setter = set_1_Color_B;
                 break;
             case "Windows.UI.Color.G":
                 userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.UI.Color");
                 xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "G", "Byte");
-                xamlMember.Getter = get_5_Color_G;
-                xamlMember.Setter = set_5_Color_G;
+                xamlMember.Getter = get_2_Color_G;
+                xamlMember.Setter = set_2_Color_G;
                 break;
             case "Windows.UI.Color.R":
                 userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.UI.Color");
                 xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "R", "Byte");
-                xamlMember.Getter = get_6_Color_R;
-                xamlMember.Setter = set_6_Color_R;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemColumns":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemColumns", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_PatientGridView_ItemColumns;
-                xamlMember.Setter = set_7_PatientGridView_ItemColumns;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemHeight":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemHeight", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_PatientGridView_ItemHeight;
-                xamlMember.Setter = set_8_PatientGridView_ItemHeight;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemRows":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemRows", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_PatientGridView_ItemRows;
-                xamlMember.Setter = set_9_PatientGridView_ItemRows;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemTemplate":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_PatientGridView_ItemTemplate;
-                xamlMember.Setter = set_10_PatientGridView_ItemTemplate;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemWidth":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemWidth", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_PatientGridView_ItemWidth;
-                xamlMember.Setter = set_11_PatientGridView_ItemWidth;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemsSource":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_PatientGridView_ItemsSource;
-                xamlMember.Setter = set_12_PatientGridView_ItemsSource;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.Header":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "Header", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_Iterator_Header;
-                xamlMember.Setter = set_13_Iterator_Header;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.HeaderTemplate":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_Iterator_HeaderTemplate;
-                xamlMember.Setter = set_14_Iterator_HeaderTemplate;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.MinValue":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "MinValue", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_Iterator_MinValue;
-                xamlMember.Setter = set_15_Iterator_MinValue;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.MaxValue":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "MaxValue", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_Iterator_MaxValue;
-                xamlMember.Setter = set_16_Iterator_MaxValue;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.Value":
-                userType = (global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.Shared.TPT_MMAS_Shared_XamlTypeInfo.XamlMember(this, "Value", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_Iterator_Value;
-                xamlMember.Setter = set_17_Iterator_Value;
+                xamlMember.Getter = get_3_Color_R;
+                xamlMember.Setter = set_3_Color_R;
                 break;
             }
             return xamlMember;

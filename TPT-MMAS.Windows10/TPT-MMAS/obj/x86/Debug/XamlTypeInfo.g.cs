@@ -156,115 +156,49 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[53];
-            _typeNameTable[0] = "TPT_MMAS.View.LoginPageViewModeVisibilitySwitcher";
+            _typeNameTable = new string[20];
+            _typeNameTable[0] = "TPT_MMAS.Shared.Converter.NullToVisibilityConverter";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "TPT_MMAS.ViewModel.ViewModelLocator";
-            _typeNameTable[3] = "TPT_MMAS.ViewModel.MedicinesViewModel";
-            _typeNameTable[4] = "TPT_MMAS.Shared.ViewModel.BaseViewModel";
-            _typeNameTable[5] = "GalaSoft.MvvmLight.ViewModelBase";
-            _typeNameTable[6] = "GalaSoft.MvvmLight.ObservableObject";
-            _typeNameTable[7] = "TPT_MMAS.ViewModel.DevicesMainViewModel";
+            _typeNameTable[2] = "TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter";
+            _typeNameTable[3] = "TPT_MMAS.Shared.Converter.DateTimeConverter";
+            _typeNameTable[4] = "TPT_MMAS.ViewModel.ViewModelLocator";
+            _typeNameTable[5] = "TPT_MMAS.ViewModel.IotShellViewModel";
+            _typeNameTable[6] = "GalaSoft.MvvmLight.ViewModelBase";
+            _typeNameTable[7] = "GalaSoft.MvvmLight.ObservableObject";
             _typeNameTable[8] = "TPT_MMAS.ViewModel.PatientsViewModel";
-            _typeNameTable[9] = "TPT_MMAS.Shared.ViewModel.PatientsViewModel";
-            _typeNameTable[10] = "TPT_MMAS.Shared.ViewModel.PatientProfileViewModel";
-            _typeNameTable[11] = "TPT_MMAS.ViewModel.ShellViewModel";
-            _typeNameTable[12] = "TPT_MMAS.Shared.ViewModel.ShellViewModel";
-            _typeNameTable[13] = "TPT_MMAS.Shell";
-            _typeNameTable[14] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[15] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[16] = "TPT_MMAS.Shared.Model.Personnel";
-            _typeNameTable[17] = "TPT_MMAS.Shared.Model.Person";
-            _typeNameTable[18] = "TPT_MMAS.View.DebugPage";
-            _typeNameTable[19] = "TPT_MMAS.View.Devices.DevicesRegisterPage";
-            _typeNameTable[20] = "TPT_MMAS.View.Dialog.AddMedicineDialog";
-            _typeNameTable[21] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[22] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[23] = "TPT_MMAS.Shared.Model.MedicineInventory";
-            _typeNameTable[24] = "TPT_MMAS.View.Dialog.AddMedicineResult";
-            _typeNameTable[25] = "System.Enum";
-            _typeNameTable[26] = "System.ValueType";
-            _typeNameTable[27] = "TPT_MMAS.Shared.Control.Iterator";
-            _typeNameTable[28] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[29] = "Int32";
-            _typeNameTable[30] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[31] = "TPT_MMAS.View.Dialog.AddPrescriptionDialog";
-            _typeNameTable[32] = "System.Collections.ObjectModel.ObservableCollection`1<TPT_MMAS.Shared.Model.MedicineInventory>";
-            _typeNameTable[33] = "System.Collections.ObjectModel.Collection`1<TPT_MMAS.Shared.Model.MedicineInventory>";
-            _typeNameTable[34] = "String";
-            _typeNameTable[35] = "System.DateTime";
-            _typeNameTable[36] = "System.Nullable`1<System.DateTime>";
-            _typeNameTable[37] = "TPT_MMAS.Shared.Model.Prescription";
-            _typeNameTable[38] = "System.Collections.Generic.List`1<TPT_MMAS.Shared.Model.Prescription>";
-            _typeNameTable[39] = "Boolean";
-            _typeNameTable[40] = "TPT_MMAS.View.Dialog.LoginDialog";
-            _typeNameTable[41] = "System.Nullable`1<TPT_MMAS.View.Dialog.LoginDialogResult>";
-            _typeNameTable[42] = "TPT_MMAS.View.LicensesPage";
-            _typeNameTable[43] = "TPT_MMAS.View.LoginPage";
-            _typeNameTable[44] = "TPT_MMAS.View.MedicinesPage";
-            _typeNameTable[45] = "TPT_MMAS.Shared.Model.Role";
-            _typeNameTable[46] = "TPT_MMAS.View.PatientProfilePage";
-            _typeNameTable[47] = "TPT_MMAS.Shared.Control.OpenDownCommandBar";
-            _typeNameTable[48] = "Windows.UI.Xaml.Controls.CommandBar";
-            _typeNameTable[49] = "TPT_MMAS.Shared.Control.PatientGridView";
-            _typeNameTable[50] = "Double";
-            _typeNameTable[51] = "TPT_MMAS.View.PatientsPage";
-            _typeNameTable[52] = "TPT_MMAS.View.SettingsPage";
+            _typeNameTable[9] = "TPT_MMAS.ViewModel.BaseViewModel";
+            _typeNameTable[10] = "TPT_MMAS.ViewModel.PatientProfileViewModel";
+            _typeNameTable[11] = "TPT_MMAS.Shell";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[14] = "TPT_MMAS.View.DebugPage";
+            _typeNameTable[15] = "TPT_MMAS.View.IoT.IotShell";
+            _typeNameTable[16] = "TPT_MMAS.View.MedicinesPage";
+            _typeNameTable[17] = "TPT_MMAS.View.PatientProfilePage";
+            _typeNameTable[18] = "TPT_MMAS.View.PatientsPage";
+            _typeNameTable[19] = "TPT_MMAS.View.SystemsPage";
 
-            _typeTable = new global::System.Type[53];
-            _typeTable[0] = typeof(global::TPT_MMAS.View.LoginPageViewModeVisibilitySwitcher);
+            _typeTable = new global::System.Type[20];
+            _typeTable[0] = typeof(global::TPT_MMAS.Shared.Converter.NullToVisibilityConverter);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::TPT_MMAS.ViewModel.ViewModelLocator);
-            _typeTable[3] = typeof(global::TPT_MMAS.ViewModel.MedicinesViewModel);
-            _typeTable[4] = typeof(global::TPT_MMAS.Shared.ViewModel.BaseViewModel);
-            _typeTable[5] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
-            _typeTable[6] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
-            _typeTable[7] = typeof(global::TPT_MMAS.ViewModel.DevicesMainViewModel);
+            _typeTable[2] = typeof(global::TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter);
+            _typeTable[3] = typeof(global::TPT_MMAS.Shared.Converter.DateTimeConverter);
+            _typeTable[4] = typeof(global::TPT_MMAS.ViewModel.ViewModelLocator);
+            _typeTable[5] = typeof(global::TPT_MMAS.ViewModel.IotShellViewModel);
+            _typeTable[6] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
+            _typeTable[7] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
             _typeTable[8] = typeof(global::TPT_MMAS.ViewModel.PatientsViewModel);
-            _typeTable[9] = typeof(global::TPT_MMAS.Shared.ViewModel.PatientsViewModel);
-            _typeTable[10] = typeof(global::TPT_MMAS.Shared.ViewModel.PatientProfileViewModel);
-            _typeTable[11] = typeof(global::TPT_MMAS.ViewModel.ShellViewModel);
-            _typeTable[12] = typeof(global::TPT_MMAS.Shared.ViewModel.ShellViewModel);
-            _typeTable[13] = typeof(global::TPT_MMAS.Shell);
-            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[16] = typeof(global::TPT_MMAS.Shared.Model.Personnel);
-            _typeTable[17] = typeof(global::TPT_MMAS.Shared.Model.Person);
-            _typeTable[18] = typeof(global::TPT_MMAS.View.DebugPage);
-            _typeTable[19] = typeof(global::TPT_MMAS.View.Devices.DevicesRegisterPage);
-            _typeTable[20] = typeof(global::TPT_MMAS.View.Dialog.AddMedicineDialog);
-            _typeTable[21] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[23] = typeof(global::TPT_MMAS.Shared.Model.MedicineInventory);
-            _typeTable[24] = typeof(global::TPT_MMAS.View.Dialog.AddMedicineResult);
-            _typeTable[25] = typeof(global::System.Enum);
-            _typeTable[26] = typeof(global::System.ValueType);
-            _typeTable[27] = typeof(global::TPT_MMAS.Shared.Control.Iterator);
-            _typeTable[28] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[29] = typeof(global::System.Int32);
-            _typeTable[30] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[31] = typeof(global::TPT_MMAS.View.Dialog.AddPrescriptionDialog);
-            _typeTable[32] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TPT_MMAS.Shared.Model.MedicineInventory>);
-            _typeTable[33] = typeof(global::System.Collections.ObjectModel.Collection<global::TPT_MMAS.Shared.Model.MedicineInventory>);
-            _typeTable[34] = typeof(global::System.String);
-            _typeTable[35] = typeof(global::System.DateTime);
-            _typeTable[36] = typeof(global::System.Nullable<global::System.DateTime>);
-            _typeTable[37] = typeof(global::TPT_MMAS.Shared.Model.Prescription);
-            _typeTable[38] = typeof(global::System.Collections.Generic.List<global::TPT_MMAS.Shared.Model.Prescription>);
-            _typeTable[39] = typeof(global::System.Boolean);
-            _typeTable[40] = typeof(global::TPT_MMAS.View.Dialog.LoginDialog);
-            _typeTable[41] = typeof(global::System.Nullable<global::TPT_MMAS.View.Dialog.LoginDialogResult>);
-            _typeTable[42] = typeof(global::TPT_MMAS.View.LicensesPage);
-            _typeTable[43] = typeof(global::TPT_MMAS.View.LoginPage);
-            _typeTable[44] = typeof(global::TPT_MMAS.View.MedicinesPage);
-            _typeTable[45] = typeof(global::TPT_MMAS.Shared.Model.Role);
-            _typeTable[46] = typeof(global::TPT_MMAS.View.PatientProfilePage);
-            _typeTable[47] = typeof(global::TPT_MMAS.Shared.Control.OpenDownCommandBar);
-            _typeTable[48] = typeof(global::Windows.UI.Xaml.Controls.CommandBar);
-            _typeTable[49] = typeof(global::TPT_MMAS.Shared.Control.PatientGridView);
-            _typeTable[50] = typeof(global::System.Double);
-            _typeTable[51] = typeof(global::TPT_MMAS.View.PatientsPage);
-            _typeTable[52] = typeof(global::TPT_MMAS.View.SettingsPage);
+            _typeTable[9] = typeof(global::TPT_MMAS.ViewModel.BaseViewModel);
+            _typeTable[10] = typeof(global::TPT_MMAS.ViewModel.PatientProfileViewModel);
+            _typeTable[11] = typeof(global::TPT_MMAS.Shell);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[14] = typeof(global::TPT_MMAS.View.DebugPage);
+            _typeTable[15] = typeof(global::TPT_MMAS.View.IoT.IotShell);
+            _typeTable[16] = typeof(global::TPT_MMAS.View.MedicinesPage);
+            _typeTable[17] = typeof(global::TPT_MMAS.View.PatientProfilePage);
+            _typeTable[18] = typeof(global::TPT_MMAS.View.PatientsPage);
+            _typeTable[19] = typeof(global::TPT_MMAS.View.SystemsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -299,53 +233,22 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_LoginPageViewModeVisibilitySwitcher() { return new global::TPT_MMAS.View.LoginPageViewModeVisibilitySwitcher(); }
-        private object Activate_2_ViewModelLocator() { return new global::TPT_MMAS.ViewModel.ViewModelLocator(); }
-        private object Activate_3_MedicinesViewModel() { return new global::TPT_MMAS.ViewModel.MedicinesViewModel(); }
-        private object Activate_4_BaseViewModel() { return new global::TPT_MMAS.Shared.ViewModel.BaseViewModel(); }
-        private object Activate_6_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
-        private object Activate_7_DevicesMainViewModel() { return new global::TPT_MMAS.ViewModel.DevicesMainViewModel(); }
+        private object Activate_0_NullToVisibilityConverter() { return new global::TPT_MMAS.Shared.Converter.NullToVisibilityConverter(); }
+        private object Activate_2_BooleanToVisibilityConverter() { return new global::TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter(); }
+        private object Activate_3_DateTimeConverter() { return new global::TPT_MMAS.Shared.Converter.DateTimeConverter(); }
+        private object Activate_4_ViewModelLocator() { return new global::TPT_MMAS.ViewModel.ViewModelLocator(); }
+        private object Activate_5_IotShellViewModel() { return new global::TPT_MMAS.ViewModel.IotShellViewModel(); }
+        private object Activate_7_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_8_PatientsViewModel() { return new global::TPT_MMAS.ViewModel.PatientsViewModel(); }
-        private object Activate_9_PatientsViewModel() { return new global::TPT_MMAS.Shared.ViewModel.PatientsViewModel(); }
-        private object Activate_10_PatientProfileViewModel() { return new global::TPT_MMAS.Shared.ViewModel.PatientProfileViewModel(); }
-        private object Activate_11_ShellViewModel() { return new global::TPT_MMAS.ViewModel.ShellViewModel(); }
-        private object Activate_12_ShellViewModel() { return new global::TPT_MMAS.Shared.ViewModel.ShellViewModel(); }
-        private object Activate_16_Personnel() { return new global::TPT_MMAS.Shared.Model.Personnel(); }
-        private object Activate_17_Person() { return new global::TPT_MMAS.Shared.Model.Person(); }
-        private object Activate_18_DebugPage() { return new global::TPT_MMAS.View.DebugPage(); }
-        private object Activate_19_DevicesRegisterPage() { return new global::TPT_MMAS.View.Devices.DevicesRegisterPage(); }
-        private object Activate_20_AddMedicineDialog() { return new global::TPT_MMAS.View.Dialog.AddMedicineDialog(); }
-        private object Activate_23_MedicineInventory() { return new global::TPT_MMAS.Shared.Model.MedicineInventory(); }
-        private object Activate_27_Iterator() { return new global::TPT_MMAS.Shared.Control.Iterator(); }
-        private object Activate_32_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TPT_MMAS.Shared.Model.MedicineInventory>(); }
-        private object Activate_33_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TPT_MMAS.Shared.Model.MedicineInventory>(); }
-        private object Activate_37_Prescription() { return new global::TPT_MMAS.Shared.Model.Prescription(); }
-        private object Activate_38_List() { return new global::System.Collections.Generic.List<global::TPT_MMAS.Shared.Model.Prescription>(); }
-        private object Activate_42_LicensesPage() { return new global::TPT_MMAS.View.LicensesPage(); }
-        private object Activate_44_MedicinesPage() { return new global::TPT_MMAS.View.MedicinesPage(); }
-        private object Activate_46_PatientProfilePage() { return new global::TPT_MMAS.View.PatientProfilePage(); }
-        private object Activate_47_OpenDownCommandBar() { return new global::TPT_MMAS.Shared.Control.OpenDownCommandBar(); }
-        private object Activate_49_PatientGridView() { return new global::TPT_MMAS.Shared.Control.PatientGridView(); }
-        private object Activate_51_PatientsPage() { return new global::TPT_MMAS.View.PatientsPage(); }
-        private object Activate_52_SettingsPage() { return new global::TPT_MMAS.View.SettingsPage(); }
-        private void VectorAdd_32_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::TPT_MMAS.Shared.Model.MedicineInventory>)instance;
-            var newItem = (global::TPT_MMAS.Shared.Model.MedicineInventory)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_33_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::TPT_MMAS.Shared.Model.MedicineInventory>)instance;
-            var newItem = (global::TPT_MMAS.Shared.Model.MedicineInventory)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_38_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::TPT_MMAS.Shared.Model.Prescription>)instance;
-            var newItem = (global::TPT_MMAS.Shared.Model.Prescription)item;
-            collection.Add(newItem);
-        }
+        private object Activate_9_BaseViewModel() { return new global::TPT_MMAS.ViewModel.BaseViewModel(); }
+        private object Activate_10_PatientProfileViewModel() { return new global::TPT_MMAS.ViewModel.PatientProfileViewModel(); }
+        private object Activate_11_Shell() { return new global::TPT_MMAS.Shell(); }
+        private object Activate_14_DebugPage() { return new global::TPT_MMAS.View.DebugPage(); }
+        private object Activate_15_IotShell() { return new global::TPT_MMAS.View.IoT.IotShell(); }
+        private object Activate_16_MedicinesPage() { return new global::TPT_MMAS.View.MedicinesPage(); }
+        private object Activate_17_PatientProfilePage() { return new global::TPT_MMAS.View.PatientProfilePage(); }
+        private object Activate_18_PatientsPage() { return new global::TPT_MMAS.View.PatientsPage(); }
+        private object Activate_19_SystemsPage() { return new global::TPT_MMAS.View.SystemsPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -357,10 +260,9 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  TPT_MMAS.View.LoginPageViewModeVisibilitySwitcher
+            case 0:   //  TPT_MMAS.Shared.Converter.NullToVisibilityConverter
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_0_LoginPageViewModeVisibilitySwitcher;
-                userType.SetIsLocalType();
+                userType.Activator = Activate_0_NullToVisibilityConverter;
                 xamlType = userType;
                 break;
 
@@ -368,364 +270,120 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
                 xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  TPT_MMAS.ViewModel.ViewModelLocator
+            case 2:   //  TPT_MMAS.Shared.Converter.BooleanToVisibilityConverter
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_2_ViewModelLocator;
-                userType.AddMemberName("Medicines");
-                userType.AddMemberName("DevicesMain");
+                userType.Activator = Activate_2_BooleanToVisibilityConverter;
+                xamlType = userType;
+                break;
+
+            case 3:   //  TPT_MMAS.Shared.Converter.DateTimeConverter
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_3_DateTimeConverter;
+                xamlType = userType;
+                break;
+
+            case 4:   //  TPT_MMAS.ViewModel.ViewModelLocator
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_4_ViewModelLocator;
+                userType.AddMemberName("IotShell");
                 userType.AddMemberName("Patients");
                 userType.AddMemberName("Patient");
-                userType.AddMemberName("Shell");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 3:   //  TPT_MMAS.ViewModel.MedicinesViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
+            case 5:   //  TPT_MMAS.ViewModel.IotShellViewModel
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  TPT_MMAS.Shared.ViewModel.BaseViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
-                userType.Activator = Activate_4_BaseViewModel;
-                xamlType = userType;
-                break;
-
-            case 5:   //  GalaSoft.MvvmLight.ViewModelBase
+            case 6:   //  GalaSoft.MvvmLight.ViewModelBase
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ObservableObject"));
                 xamlType = userType;
                 break;
 
-            case 6:   //  GalaSoft.MvvmLight.ObservableObject
+            case 7:   //  GalaSoft.MvvmLight.ObservableObject
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_6_ObservableObject;
-                xamlType = userType;
-                break;
-
-            case 7:   //  TPT_MMAS.ViewModel.DevicesMainViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
+                userType.Activator = Activate_7_ObservableObject;
                 xamlType = userType;
                 break;
 
             case 8:   //  TPT_MMAS.ViewModel.PatientsViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.PatientsViewModel"));
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.ViewModel.BaseViewModel"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  TPT_MMAS.Shared.ViewModel.PatientsViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.Activator = Activate_9_PatientsViewModel;
+            case 9:   //  TPT_MMAS.ViewModel.BaseViewModel
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.Activator = Activate_9_BaseViewModel;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  TPT_MMAS.Shared.ViewModel.PatientProfileViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 11:   //  TPT_MMAS.ViewModel.ShellViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.ShellViewModel"));
+            case 10:   //  TPT_MMAS.ViewModel.PatientProfileViewModel
+                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.ViewModel.BaseViewModel"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  TPT_MMAS.Shared.ViewModel.ShellViewModel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.ViewModel.BaseViewModel"));
-                userType.Activator = Activate_12_ShellViewModel;
-                xamlType = userType;
-                break;
-
-            case 13:   //  TPT_MMAS.Shell
+            case 11:   //  TPT_MMAS.Shell
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.AddMemberName("CurrentUser");
+                userType.Activator = Activate_11_Shell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Windows.UI.Xaml.Controls.Page
+            case 12:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  Windows.UI.Xaml.Controls.UserControl
+            case 13:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  TPT_MMAS.Shared.Model.Personnel
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("TPT_MMAS.Shared.Model.Person"));
-                userType.Activator = Activate_16_Personnel;
-                userType.AddMemberName("FirstName");
-                userType.AddMemberName("LastName");
-                userType.AddMemberName("ID");
-                userType.AddMemberName("MiddleName");
-                userType.AddMemberName("Username");
-                userType.AddMemberName("Title");
-                userType.AddMemberName("Role");
-                xamlType = userType;
-                break;
-
-            case 17:   //  TPT_MMAS.Shared.Model.Person
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_17_Person;
-                userType.AddMemberName("FullName");
-                userType.AddMemberName("FullNameAbbreviated");
-                userType.AddMemberName("ShortName");
-                userType.AddMemberName("FirstLastName");
-                userType.AddMemberName("Photo");
-                xamlType = userType;
-                break;
-
-            case 18:   //  TPT_MMAS.View.DebugPage
+            case 14:   //  TPT_MMAS.View.DebugPage
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_DebugPage;
+                userType.Activator = Activate_14_DebugPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  TPT_MMAS.View.Devices.DevicesRegisterPage
+            case 15:   //  TPT_MMAS.View.IoT.IotShell
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_DevicesRegisterPage;
+                userType.Activator = Activate_15_IotShell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  TPT_MMAS.View.Dialog.AddMedicineDialog
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_20_AddMedicineDialog;
-                userType.AddMemberName("NewMedicine");
-                userType.AddMemberName("Result");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 21:   //  Windows.UI.Xaml.Controls.ContentDialog
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 22:   //  Windows.UI.Xaml.Controls.ContentControl
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 23:   //  TPT_MMAS.Shared.Model.MedicineInventory
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_23_MedicineInventory;
-                userType.AddMemberName("ID");
-                userType.AddMemberName("GenericName");
-                userType.AddMemberName("BrandName");
-                userType.AddMemberName("Dosage");
-                userType.AddMemberName("StocksLeft");
-                userType.AddMemberName("TimeLastAdded");
-                userType.AddMemberName("TimeLastDispensed");
-                userType.AddMemberName("Name");
-                userType.AddMemberName("NameWithDosage");
-                xamlType = userType;
-                break;
-
-            case 24:   //  TPT_MMAS.View.Dialog.AddMedicineResult
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("Success", global::TPT_MMAS.View.Dialog.AddMedicineResult.Success);
-                userType.AddEnumValue("AddFailed", global::TPT_MMAS.View.Dialog.AddMedicineResult.AddFailed);
-                userType.AddEnumValue("Cancelled", global::TPT_MMAS.View.Dialog.AddMedicineResult.Cancelled);
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 25:   //  System.Enum
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                xamlType = userType;
-                break;
-
-            case 26:   //  System.ValueType
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                xamlType = userType;
-                break;
-
-            case 27:   //  TPT_MMAS.Shared.Control.Iterator
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_27_Iterator;
-                userType.AddMemberName("Header");
-                userType.AddMemberName("Value");
-                userType.AddMemberName("MinValue");
-                userType.AddMemberName("HeaderTemplate");
-                userType.AddMemberName("MaxValue");
-                xamlType = userType;
-                break;
-
-            case 28:   //  Windows.UI.Xaml.Controls.Control
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 29:   //  Int32
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 30:   //  Windows.UI.Xaml.DataTemplate
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 31:   //  TPT_MMAS.View.Dialog.AddPrescriptionDialog
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.AddMemberName("SuggestedMedicines");
-                userType.AddMemberName("AddedItem");
-                userType.AddMemberName("AddedItems");
-                userType.AddMemberName("IsRecurring");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 32:   //  System.Collections.ObjectModel.ObservableCollection`1<TPT_MMAS.Shared.Model.MedicineInventory>
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<TPT_MMAS.Shared.Model.MedicineInventory>"));
-                userType.CollectionAdd = VectorAdd_32_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 33:   //  System.Collections.ObjectModel.Collection`1<TPT_MMAS.Shared.Model.MedicineInventory>
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_33_Collection;
-                userType.CollectionAdd = VectorAdd_33_Collection;
-                xamlType = userType;
-                break;
-
-            case 34:   //  String
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 35:   //  System.DateTime
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 36:   //  System.Nullable`1<System.DateTime>
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 37:   //  TPT_MMAS.Shared.Model.Prescription
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_37_Prescription;
-                userType.AddMemberName("ID");
-                userType.AddMemberName("Medicine");
-                userType.AddMemberName("Schedule");
-                userType.AddMemberName("Amount");
-                userType.AddMemberName("AddedOn");
-                userType.AddMemberName("AddedBy");
-                userType.AddMemberName("SelectedOn");
-                userType.AddMemberName("Selector");
-                userType.AddMemberName("LoadedOn");
-                userType.AddMemberName("LoadedAt");
-                userType.AddMemberName("LoadedBy");
-                userType.AddMemberName("AdministeredOn");
-                userType.AddMemberName("AdministeredBy");
-                xamlType = userType;
-                break;
-
-            case 38:   //  System.Collections.Generic.List`1<TPT_MMAS.Shared.Model.Prescription>
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_38_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 39:   //  Boolean
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 40:   //  TPT_MMAS.View.Dialog.LoginDialog
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.AddMemberName("AuthenticatedUser");
-                userType.AddMemberName("Result");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 41:   //  System.Nullable`1<TPT_MMAS.View.Dialog.LoginDialogResult>
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 42:   //  TPT_MMAS.View.LicensesPage
+            case 16:   //  TPT_MMAS.View.MedicinesPage
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_42_LicensesPage;
+                userType.Activator = Activate_16_MedicinesPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 43:   //  TPT_MMAS.View.LoginPage
+            case 17:   //  TPT_MMAS.View.PatientProfilePage
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_17_PatientProfilePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 44:   //  TPT_MMAS.View.MedicinesPage
+            case 18:   //  TPT_MMAS.View.PatientsPage
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_44_MedicinesPage;
+                userType.Activator = Activate_18_PatientsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 45:   //  TPT_MMAS.Shared.Model.Role
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("Staff", global::TPT_MMAS.Shared.Model.Role.Staff);
-                userType.AddEnumValue("Nurse", global::TPT_MMAS.Shared.Model.Role.Nurse);
-                userType.AddEnumValue("Doctor", global::TPT_MMAS.Shared.Model.Role.Doctor);
-                userType.AddEnumValue("Admin", global::TPT_MMAS.Shared.Model.Role.Admin);
-                xamlType = userType;
-                break;
-
-            case 46:   //  TPT_MMAS.View.PatientProfilePage
+            case 19:   //  TPT_MMAS.View.SystemsPage
                 userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_46_PatientProfilePage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 47:   //  TPT_MMAS.Shared.Control.OpenDownCommandBar
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.CommandBar"));
-                userType.Activator = Activate_47_OpenDownCommandBar;
-                xamlType = userType;
-                break;
-
-            case 48:   //  Windows.UI.Xaml.Controls.CommandBar
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 49:   //  TPT_MMAS.Shared.Control.PatientGridView
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_49_PatientGridView;
-                userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("ItemColumns");
-                userType.AddMemberName("ItemRows");
-                userType.AddMemberName("ItemTemplate");
-                userType.AddMemberName("ItemHeight");
-                userType.AddMemberName("ItemWidth");
-                xamlType = userType;
-                break;
-
-            case 50:   //  Double
-                xamlType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 51:   //  TPT_MMAS.View.PatientsPage
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_51_PatientsPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 52:   //  TPT_MMAS.View.SettingsPage
-                userType = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_52_SettingsPage;
+                userType.Activator = Activate_19_SystemsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -790,530 +448,20 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
             return foundXamlType;
         }
 
-        private object get_0_ViewModelLocator_Medicines(object instance)
+        private object get_0_ViewModelLocator_IotShell(object instance)
         {
             var that = (global::TPT_MMAS.ViewModel.ViewModelLocator)instance;
-            return that.Medicines;
+            return that.IotShell;
         }
-        private object get_1_ViewModelLocator_DevicesMain(object instance)
-        {
-            var that = (global::TPT_MMAS.ViewModel.ViewModelLocator)instance;
-            return that.DevicesMain;
-        }
-        private object get_2_ViewModelLocator_Patients(object instance)
+        private object get_1_ViewModelLocator_Patients(object instance)
         {
             var that = (global::TPT_MMAS.ViewModel.ViewModelLocator)instance;
             return that.Patients;
         }
-        private object get_3_ViewModelLocator_Patient(object instance)
+        private object get_2_ViewModelLocator_Patient(object instance)
         {
             var that = (global::TPT_MMAS.ViewModel.ViewModelLocator)instance;
             return that.Patient;
-        }
-        private object get_4_ViewModelLocator_Shell(object instance)
-        {
-            var that = (global::TPT_MMAS.ViewModel.ViewModelLocator)instance;
-            return that.Shell;
-        }
-        private object get_5_Shell_CurrentUser(object instance)
-        {
-            var that = (global::TPT_MMAS.Shell)instance;
-            return that.CurrentUser;
-        }
-        private void set_5_Shell_CurrentUser(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shell)instance;
-            that.CurrentUser = (global::TPT_MMAS.Shared.Model.Personnel)Value;
-        }
-        private object get_6_AddMedicineDialog_NewMedicine(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddMedicineDialog)instance;
-            return that.NewMedicine;
-        }
-        private void set_6_AddMedicineDialog_NewMedicine(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddMedicineDialog)instance;
-            that.NewMedicine = (global::TPT_MMAS.Shared.Model.MedicineInventory)Value;
-        }
-        private object get_7_AddMedicineDialog_Result(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddMedicineDialog)instance;
-            return that.Result;
-        }
-        private void set_7_AddMedicineDialog_Result(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddMedicineDialog)instance;
-            that.Result = (global::TPT_MMAS.View.Dialog.AddMedicineResult)Value;
-        }
-        private object get_8_Iterator_Header(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.Header;
-        }
-        private void set_8_Iterator_Header(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.Header = (global::System.Object)Value;
-        }
-        private object get_9_Iterator_Value(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.Value;
-        }
-        private void set_9_Iterator_Value(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.Value = (global::System.Int32)Value;
-        }
-        private object get_10_Iterator_MinValue(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.MinValue;
-        }
-        private void set_10_Iterator_MinValue(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.MinValue = (global::System.Int32)Value;
-        }
-        private object get_11_Iterator_HeaderTemplate(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.HeaderTemplate;
-        }
-        private void set_11_Iterator_HeaderTemplate(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.HeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_12_Iterator_MaxValue(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            return that.MaxValue;
-        }
-        private void set_12_Iterator_MaxValue(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.Iterator)instance;
-            that.MaxValue = (global::System.Int32)Value;
-        }
-        private object get_13_AddPrescriptionDialog_SuggestedMedicines(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            return that.SuggestedMedicines;
-        }
-        private void set_13_AddPrescriptionDialog_SuggestedMedicines(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            that.SuggestedMedicines = (global::System.Collections.ObjectModel.ObservableCollection<global::TPT_MMAS.Shared.Model.MedicineInventory>)Value;
-        }
-        private object get_14_MedicineInventory_ID(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.ID;
-        }
-        private void set_14_MedicineInventory_ID(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.ID = (global::System.Int32)Value;
-        }
-        private object get_15_MedicineInventory_GenericName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.GenericName;
-        }
-        private void set_15_MedicineInventory_GenericName(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.GenericName = (global::System.String)Value;
-        }
-        private object get_16_MedicineInventory_BrandName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.BrandName;
-        }
-        private void set_16_MedicineInventory_BrandName(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.BrandName = (global::System.String)Value;
-        }
-        private object get_17_MedicineInventory_Dosage(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.Dosage;
-        }
-        private void set_17_MedicineInventory_Dosage(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.Dosage = (global::System.String)Value;
-        }
-        private object get_18_MedicineInventory_StocksLeft(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.StocksLeft;
-        }
-        private void set_18_MedicineInventory_StocksLeft(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.StocksLeft = (global::System.Int32)Value;
-        }
-        private object get_19_MedicineInventory_TimeLastAdded(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.TimeLastAdded;
-        }
-        private void set_19_MedicineInventory_TimeLastAdded(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.TimeLastAdded = (global::System.DateTime)Value;
-        }
-        private object get_20_MedicineInventory_TimeLastDispensed(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.TimeLastDispensed;
-        }
-        private void set_20_MedicineInventory_TimeLastDispensed(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            that.TimeLastDispensed = (global::System.Nullable<global::System.DateTime>)Value;
-        }
-        private object get_21_MedicineInventory_Name(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.Name;
-        }
-        private object get_22_MedicineInventory_NameWithDosage(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.MedicineInventory)instance;
-            return that.NameWithDosage;
-        }
-        private object get_23_AddPrescriptionDialog_AddedItem(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            return that.AddedItem;
-        }
-        private void set_23_AddPrescriptionDialog_AddedItem(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            that.AddedItem = (global::TPT_MMAS.Shared.Model.Prescription)Value;
-        }
-        private object get_24_AddPrescriptionDialog_AddedItems(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            return that.AddedItems;
-        }
-        private void set_24_AddPrescriptionDialog_AddedItems(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            that.AddedItems = (global::System.Collections.Generic.List<global::TPT_MMAS.Shared.Model.Prescription>)Value;
-        }
-        private object get_25_Prescription_ID(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.ID;
-        }
-        private void set_25_Prescription_ID(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.ID = (global::System.Int32)Value;
-        }
-        private object get_26_Prescription_Medicine(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.Medicine;
-        }
-        private void set_26_Prescription_Medicine(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.Medicine = (global::TPT_MMAS.Shared.Model.MedicineInventory)Value;
-        }
-        private object get_27_Prescription_Schedule(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.Schedule;
-        }
-        private void set_27_Prescription_Schedule(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.Schedule = (global::System.DateTime)Value;
-        }
-        private object get_28_Prescription_Amount(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.Amount;
-        }
-        private void set_28_Prescription_Amount(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.Amount = (global::System.Int32)Value;
-        }
-        private object get_29_Prescription_AddedOn(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.AddedOn;
-        }
-        private void set_29_Prescription_AddedOn(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.AddedOn = (global::System.Nullable<global::System.DateTime>)Value;
-        }
-        private object get_30_Prescription_AddedBy(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.AddedBy;
-        }
-        private void set_30_Prescription_AddedBy(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.AddedBy = (global::System.String)Value;
-        }
-        private object get_31_Prescription_SelectedOn(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.SelectedOn;
-        }
-        private void set_31_Prescription_SelectedOn(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.SelectedOn = (global::System.Nullable<global::System.DateTime>)Value;
-        }
-        private object get_32_Prescription_Selector(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.Selector;
-        }
-        private void set_32_Prescription_Selector(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.Selector = (global::System.String)Value;
-        }
-        private object get_33_Prescription_LoadedOn(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.LoadedOn;
-        }
-        private void set_33_Prescription_LoadedOn(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.LoadedOn = (global::System.Nullable<global::System.DateTime>)Value;
-        }
-        private object get_34_Prescription_LoadedAt(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.LoadedAt;
-        }
-        private void set_34_Prescription_LoadedAt(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.LoadedAt = (global::System.String)Value;
-        }
-        private object get_35_Prescription_LoadedBy(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.LoadedBy;
-        }
-        private void set_35_Prescription_LoadedBy(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.LoadedBy = (global::System.String)Value;
-        }
-        private object get_36_Prescription_AdministeredOn(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.AdministeredOn;
-        }
-        private void set_36_Prescription_AdministeredOn(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.AdministeredOn = (global::System.Nullable<global::System.DateTime>)Value;
-        }
-        private object get_37_Prescription_AdministeredBy(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            return that.AdministeredBy;
-        }
-        private void set_37_Prescription_AdministeredBy(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Prescription)instance;
-            that.AdministeredBy = (global::System.String)Value;
-        }
-        private object get_38_AddPrescriptionDialog_IsRecurring(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            return that.IsRecurring;
-        }
-        private void set_38_AddPrescriptionDialog_IsRecurring(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.AddPrescriptionDialog)instance;
-            that.IsRecurring = (global::System.Boolean)Value;
-        }
-        private object get_39_LoginDialog_AuthenticatedUser(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.LoginDialog)instance;
-            return that.AuthenticatedUser;
-        }
-        private void set_39_LoginDialog_AuthenticatedUser(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.LoginDialog)instance;
-            that.AuthenticatedUser = (global::TPT_MMAS.Shared.Model.Personnel)Value;
-        }
-        private object get_40_LoginDialog_Result(object instance)
-        {
-            var that = (global::TPT_MMAS.View.Dialog.LoginDialog)instance;
-            return that.Result;
-        }
-        private object get_41_Personnel_FirstName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.FirstName;
-        }
-        private void set_41_Personnel_FirstName(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.FirstName = (global::System.String)Value;
-        }
-        private object get_42_Personnel_LastName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.LastName;
-        }
-        private void set_42_Personnel_LastName(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.LastName = (global::System.String)Value;
-        }
-        private object get_43_Personnel_ID(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.ID;
-        }
-        private void set_43_Personnel_ID(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.ID = (global::System.Int32)Value;
-        }
-        private object get_44_Personnel_MiddleName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.MiddleName;
-        }
-        private void set_44_Personnel_MiddleName(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.MiddleName = (global::System.String)Value;
-        }
-        private object get_45_Personnel_Username(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.Username;
-        }
-        private void set_45_Personnel_Username(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.Username = (global::System.String)Value;
-        }
-        private object get_46_Personnel_Title(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.Title;
-        }
-        private void set_46_Personnel_Title(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            that.Title = (global::System.String)Value;
-        }
-        private object get_47_Personnel_Role(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Personnel)instance;
-            return that.Role;
-        }
-        private object get_48_Person_FullName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            return that.FullName;
-        }
-        private object get_49_Person_FullNameAbbreviated(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            return that.FullNameAbbreviated;
-        }
-        private object get_50_Person_ShortName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            return that.ShortName;
-        }
-        private object get_51_Person_FirstLastName(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            return that.FirstLastName;
-        }
-        private object get_52_Person_Photo(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            return that.Photo;
-        }
-        private void set_52_Person_Photo(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Model.Person)instance;
-            that.Photo = (global::System.String)Value;
-        }
-        private object get_53_PatientGridView_ItemsSource(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemsSource;
-        }
-        private void set_53_PatientGridView_ItemsSource(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemsSource = (global::System.Object)Value;
-        }
-        private object get_54_PatientGridView_ItemColumns(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemColumns;
-        }
-        private void set_54_PatientGridView_ItemColumns(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemColumns = (global::System.Int32)Value;
-        }
-        private object get_55_PatientGridView_ItemRows(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemRows;
-        }
-        private void set_55_PatientGridView_ItemRows(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemRows = (global::System.Int32)Value;
-        }
-        private object get_56_PatientGridView_ItemTemplate(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemTemplate;
-        }
-        private void set_56_PatientGridView_ItemTemplate(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_57_PatientGridView_ItemHeight(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemHeight;
-        }
-        private void set_57_PatientGridView_ItemHeight(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemHeight = (global::System.Double)Value;
-        }
-        private object get_58_PatientGridView_ItemWidth(object instance)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            return that.ItemWidth;
-        }
-        private void set_58_PatientGridView_ItemWidth(object instance, object Value)
-        {
-            var that = (global::TPT_MMAS.Shared.Control.PatientGridView)instance;
-            that.ItemWidth = (global::System.Double)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -1323,370 +471,23 @@ namespace TPT_MMAS.TPT_MMAS_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "TPT_MMAS.ViewModel.ViewModelLocator.Medicines":
+            case "TPT_MMAS.ViewModel.ViewModelLocator.IotShell":
                 userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Medicines", "TPT_MMAS.ViewModel.MedicinesViewModel");
-                xamlMember.Getter = get_0_ViewModelLocator_Medicines;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.ViewModel.ViewModelLocator.DevicesMain":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "DevicesMain", "TPT_MMAS.ViewModel.DevicesMainViewModel");
-                xamlMember.Getter = get_1_ViewModelLocator_DevicesMain;
+                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "IotShell", "TPT_MMAS.ViewModel.IotShellViewModel");
+                xamlMember.Getter = get_0_ViewModelLocator_IotShell;
                 xamlMember.SetIsReadOnly();
                 break;
             case "TPT_MMAS.ViewModel.ViewModelLocator.Patients":
                 userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.ViewModel.ViewModelLocator");
                 xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Patients", "TPT_MMAS.ViewModel.PatientsViewModel");
-                xamlMember.Getter = get_2_ViewModelLocator_Patients;
+                xamlMember.Getter = get_1_ViewModelLocator_Patients;
                 xamlMember.SetIsReadOnly();
                 break;
             case "TPT_MMAS.ViewModel.ViewModelLocator.Patient":
                 userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Patient", "TPT_MMAS.Shared.ViewModel.PatientProfileViewModel");
-                xamlMember.Getter = get_3_ViewModelLocator_Patient;
+                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Patient", "TPT_MMAS.ViewModel.PatientProfileViewModel");
+                xamlMember.Getter = get_2_ViewModelLocator_Patient;
                 xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.ViewModel.ViewModelLocator.Shell":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.ViewModel.ViewModelLocator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Shell", "TPT_MMAS.ViewModel.ShellViewModel");
-                xamlMember.Getter = get_4_ViewModelLocator_Shell;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shell.CurrentUser":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shell");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "CurrentUser", "TPT_MMAS.Shared.Model.Personnel");
-                xamlMember.Getter = get_5_Shell_CurrentUser;
-                xamlMember.Setter = set_5_Shell_CurrentUser;
-                break;
-            case "TPT_MMAS.View.Dialog.AddMedicineDialog.NewMedicine":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddMedicineDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "NewMedicine", "TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember.Getter = get_6_AddMedicineDialog_NewMedicine;
-                xamlMember.Setter = set_6_AddMedicineDialog_NewMedicine;
-                break;
-            case "TPT_MMAS.View.Dialog.AddMedicineDialog.Result":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddMedicineDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Result", "TPT_MMAS.View.Dialog.AddMedicineResult");
-                xamlMember.Getter = get_7_AddMedicineDialog_Result;
-                xamlMember.Setter = set_7_AddMedicineDialog_Result;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.Header":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Header", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_Iterator_Header;
-                xamlMember.Setter = set_8_Iterator_Header;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.Value":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Value", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_Iterator_Value;
-                xamlMember.Setter = set_9_Iterator_Value;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.MinValue":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "MinValue", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_Iterator_MinValue;
-                xamlMember.Setter = set_10_Iterator_MinValue;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.HeaderTemplate":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_Iterator_HeaderTemplate;
-                xamlMember.Setter = set_11_Iterator_HeaderTemplate;
-                break;
-            case "TPT_MMAS.Shared.Control.Iterator.MaxValue":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.Iterator");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "MaxValue", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_Iterator_MaxValue;
-                xamlMember.Setter = set_12_Iterator_MaxValue;
-                break;
-            case "TPT_MMAS.View.Dialog.AddPrescriptionDialog.SuggestedMedicines":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddPrescriptionDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "SuggestedMedicines", "System.Collections.ObjectModel.ObservableCollection`1<TPT_MMAS.Shared.Model.MedicineInventory>");
-                xamlMember.Getter = get_13_AddPrescriptionDialog_SuggestedMedicines;
-                xamlMember.Setter = set_13_AddPrescriptionDialog_SuggestedMedicines;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.ID":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ID", "Int32");
-                xamlMember.Getter = get_14_MedicineInventory_ID;
-                xamlMember.Setter = set_14_MedicineInventory_ID;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.GenericName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "GenericName", "String");
-                xamlMember.Getter = get_15_MedicineInventory_GenericName;
-                xamlMember.Setter = set_15_MedicineInventory_GenericName;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.BrandName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "BrandName", "String");
-                xamlMember.Getter = get_16_MedicineInventory_BrandName;
-                xamlMember.Setter = set_16_MedicineInventory_BrandName;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.Dosage":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Dosage", "String");
-                xamlMember.Getter = get_17_MedicineInventory_Dosage;
-                xamlMember.Setter = set_17_MedicineInventory_Dosage;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.StocksLeft":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "StocksLeft", "Int32");
-                xamlMember.Getter = get_18_MedicineInventory_StocksLeft;
-                xamlMember.Setter = set_18_MedicineInventory_StocksLeft;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.TimeLastAdded":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "TimeLastAdded", "System.DateTime");
-                xamlMember.Getter = get_19_MedicineInventory_TimeLastAdded;
-                xamlMember.Setter = set_19_MedicineInventory_TimeLastAdded;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.TimeLastDispensed":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "TimeLastDispensed", "System.Nullable`1<System.DateTime>");
-                xamlMember.Getter = get_20_MedicineInventory_TimeLastDispensed;
-                xamlMember.Setter = set_20_MedicineInventory_TimeLastDispensed;
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.Name":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_21_MedicineInventory_Name;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.MedicineInventory.NameWithDosage":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "NameWithDosage", "String");
-                xamlMember.Getter = get_22_MedicineInventory_NameWithDosage;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.View.Dialog.AddPrescriptionDialog.AddedItem":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddPrescriptionDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AddedItem", "TPT_MMAS.Shared.Model.Prescription");
-                xamlMember.Getter = get_23_AddPrescriptionDialog_AddedItem;
-                xamlMember.Setter = set_23_AddPrescriptionDialog_AddedItem;
-                break;
-            case "TPT_MMAS.View.Dialog.AddPrescriptionDialog.AddedItems":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddPrescriptionDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AddedItems", "System.Collections.Generic.List`1<TPT_MMAS.Shared.Model.Prescription>");
-                xamlMember.Getter = get_24_AddPrescriptionDialog_AddedItems;
-                xamlMember.Setter = set_24_AddPrescriptionDialog_AddedItems;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.ID":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ID", "Int32");
-                xamlMember.Getter = get_25_Prescription_ID;
-                xamlMember.Setter = set_25_Prescription_ID;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.Medicine":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Medicine", "TPT_MMAS.Shared.Model.MedicineInventory");
-                xamlMember.Getter = get_26_Prescription_Medicine;
-                xamlMember.Setter = set_26_Prescription_Medicine;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.Schedule":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Schedule", "System.DateTime");
-                xamlMember.Getter = get_27_Prescription_Schedule;
-                xamlMember.Setter = set_27_Prescription_Schedule;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.Amount":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Amount", "Int32");
-                xamlMember.Getter = get_28_Prescription_Amount;
-                xamlMember.Setter = set_28_Prescription_Amount;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.AddedOn":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AddedOn", "System.Nullable`1<System.DateTime>");
-                xamlMember.Getter = get_29_Prescription_AddedOn;
-                xamlMember.Setter = set_29_Prescription_AddedOn;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.AddedBy":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AddedBy", "String");
-                xamlMember.Getter = get_30_Prescription_AddedBy;
-                xamlMember.Setter = set_30_Prescription_AddedBy;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.SelectedOn":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "SelectedOn", "System.Nullable`1<System.DateTime>");
-                xamlMember.Getter = get_31_Prescription_SelectedOn;
-                xamlMember.Setter = set_31_Prescription_SelectedOn;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.Selector":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Selector", "String");
-                xamlMember.Getter = get_32_Prescription_Selector;
-                xamlMember.Setter = set_32_Prescription_Selector;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.LoadedOn":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "LoadedOn", "System.Nullable`1<System.DateTime>");
-                xamlMember.Getter = get_33_Prescription_LoadedOn;
-                xamlMember.Setter = set_33_Prescription_LoadedOn;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.LoadedAt":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "LoadedAt", "String");
-                xamlMember.Getter = get_34_Prescription_LoadedAt;
-                xamlMember.Setter = set_34_Prescription_LoadedAt;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.LoadedBy":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "LoadedBy", "String");
-                xamlMember.Getter = get_35_Prescription_LoadedBy;
-                xamlMember.Setter = set_35_Prescription_LoadedBy;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.AdministeredOn":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AdministeredOn", "System.Nullable`1<System.DateTime>");
-                xamlMember.Getter = get_36_Prescription_AdministeredOn;
-                xamlMember.Setter = set_36_Prescription_AdministeredOn;
-                break;
-            case "TPT_MMAS.Shared.Model.Prescription.AdministeredBy":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Prescription");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AdministeredBy", "String");
-                xamlMember.Getter = get_37_Prescription_AdministeredBy;
-                xamlMember.Setter = set_37_Prescription_AdministeredBy;
-                break;
-            case "TPT_MMAS.View.Dialog.AddPrescriptionDialog.IsRecurring":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.AddPrescriptionDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "IsRecurring", "Boolean");
-                xamlMember.Getter = get_38_AddPrescriptionDialog_IsRecurring;
-                xamlMember.Setter = set_38_AddPrescriptionDialog_IsRecurring;
-                break;
-            case "TPT_MMAS.View.Dialog.LoginDialog.AuthenticatedUser":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.LoginDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "AuthenticatedUser", "TPT_MMAS.Shared.Model.Personnel");
-                xamlMember.Getter = get_39_LoginDialog_AuthenticatedUser;
-                xamlMember.Setter = set_39_LoginDialog_AuthenticatedUser;
-                break;
-            case "TPT_MMAS.View.Dialog.LoginDialog.Result":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.View.Dialog.LoginDialog");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Result", "System.Nullable`1<TPT_MMAS.View.Dialog.LoginDialogResult>");
-                xamlMember.Getter = get_40_LoginDialog_Result;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.FirstName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "FirstName", "String");
-                xamlMember.Getter = get_41_Personnel_FirstName;
-                xamlMember.Setter = set_41_Personnel_FirstName;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.LastName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "LastName", "String");
-                xamlMember.Getter = get_42_Personnel_LastName;
-                xamlMember.Setter = set_42_Personnel_LastName;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.ID":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ID", "Int32");
-                xamlMember.Getter = get_43_Personnel_ID;
-                xamlMember.Setter = set_43_Personnel_ID;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.MiddleName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "MiddleName", "String");
-                xamlMember.Getter = get_44_Personnel_MiddleName;
-                xamlMember.Setter = set_44_Personnel_MiddleName;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.Username":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_45_Personnel_Username;
-                xamlMember.Setter = set_45_Personnel_Username;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.Title":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.Getter = get_46_Personnel_Title;
-                xamlMember.Setter = set_46_Personnel_Title;
-                break;
-            case "TPT_MMAS.Shared.Model.Personnel.Role":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Personnel");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Role", "TPT_MMAS.Shared.Model.Role");
-                xamlMember.Getter = get_47_Personnel_Role;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Person.FullName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Person");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "FullName", "String");
-                xamlMember.Getter = get_48_Person_FullName;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Person.FullNameAbbreviated":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Person");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "FullNameAbbreviated", "String");
-                xamlMember.Getter = get_49_Person_FullNameAbbreviated;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Person.ShortName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Person");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ShortName", "String");
-                xamlMember.Getter = get_50_Person_ShortName;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Person.FirstLastName":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Person");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "FirstLastName", "String");
-                xamlMember.Getter = get_51_Person_FirstLastName;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TPT_MMAS.Shared.Model.Person.Photo":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Model.Person");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "Photo", "String");
-                xamlMember.Getter = get_52_Person_Photo;
-                xamlMember.Setter = set_52_Person_Photo;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemsSource":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_53_PatientGridView_ItemsSource;
-                xamlMember.Setter = set_53_PatientGridView_ItemsSource;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemColumns":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemColumns", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_PatientGridView_ItemColumns;
-                xamlMember.Setter = set_54_PatientGridView_ItemColumns;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemRows":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemRows", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_PatientGridView_ItemRows;
-                xamlMember.Setter = set_55_PatientGridView_ItemRows;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemTemplate":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_PatientGridView_ItemTemplate;
-                xamlMember.Setter = set_56_PatientGridView_ItemTemplate;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemHeight":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemHeight", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_PatientGridView_ItemHeight;
-                xamlMember.Setter = set_57_PatientGridView_ItemHeight;
-                break;
-            case "TPT_MMAS.Shared.Control.PatientGridView.ItemWidth":
-                userType = (global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TPT_MMAS.Shared.Control.PatientGridView");
-                xamlMember = new global::TPT_MMAS.TPT_MMAS_XamlTypeInfo.XamlMember(this, "ItemWidth", "Double");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_PatientGridView_ItemWidth;
-                xamlMember.Setter = set_58_PatientGridView_ItemWidth;
                 break;
             }
             return xamlMember;

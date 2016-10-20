@@ -6,43 +6,8 @@
 
     <!-- https://color.adobe.com/Cherry-Cheesecake-color-theme-2354/ -->
     <!-- https://color.adobe.com/antigravity-color-theme-1839482/-->
-    <Color x:Key="TPTAppPrimaryColor">#FFA80000</Color>
-    
-    <Color x:Key="TPTPatientBackgroundColor">#FF5F6273</Color>
-    <Color x:Key="TPTDefaultBackgroundColor">#FFCCC9D1</Color>
-
-
-    <Style x:Key="PatientDetailsContainer" TargetType="StackPanel">
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Margin" Value="0,12,20,4" />
-    </Style>
-    <Style x:Key="PatientDetailsHeader" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
-    </Style>
-    <Style x:Key="PatientDetailsContent" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontWeight" Value="SemiBold" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="TextAlignment" Value="Left" />
-    </Style>
-    <Style x:Key="HeaderStyle" TargetType="TextBlock">
-        <Setter Property="Margin" Value="0,0,0,32" />
-        <Setter Property="FontSize" Value="32" />
-        <Setter Property="Style" Value="{ThemeResource HeaderTextBlockStyle}" />
-        <Setter Property="TextWrapping" Value="Wrap" />
-    </Style>
-    <Style x:Key="BaseContentTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontWeight" Value="SemiLight" />
-        <Setter Property="Style" Value="{ThemeResource BaseTextBlockStyle}" />
-        <Setter Property="TextWrapping" Value="Wrap" />
-    </Style>
-    <Style x:Key="BasePatientProfileTextStyle" TargetType="TextBlock">
-        <Setter Property="Style" Value="{ThemeResource BaseTextBlockStyle}" />
-    </Style>
-
+    <Color x:Key="TPTAppPrimaryColor">#FFB9121B</Color>
+    <Color x:Key="TPTAppDarkColor"></Color>
 
 </ResourceDictionary>
 
