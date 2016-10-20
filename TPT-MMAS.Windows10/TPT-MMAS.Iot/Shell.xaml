@@ -10,28 +10,50 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="68" />
+            <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <RelativePanel x:Name="TopBar" Background="Black">
+        <RelativePanel x:Name="TopBar" Height="44" Background="#FF142334">
             <Button x:Name="ShellBackButton" 
-                    Content="&#xE72B;" FontFamily="Segoe MDL2 Assets" FontSize="20" Foreground="White"
-                    Padding="20,12" VerticalAlignment="Stretch"
+                    Content="&#xE72B;" FontFamily="Segoe MDL2 Assets" FontSize="16" Foreground="White"
+                    Padding="16,8" VerticalAlignment="Stretch"
+                    Visibility="{x:Bind VM.IsBackButtonEnabled, Mode=OneWay, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"
                     RelativePanel.AlignTopWithPanel="True"
                     RelativePanel.AlignBottomWithPanel="True" Click="OnBackButtonClick">
                 <Button.Background>
                     <SolidColorBrush Color="White" Opacity="0.2"/>
                 </Button.Background>
             </Button>
-            <StackPanel Padding="20,12" VerticalAlignment="Center"
-                        RelativePanel.AlignRightWithPanel="True">
+            <Grid Background="#4C000000" Padding="12,0"
+                  RelativePanel.RightOf="ShellBackButton"
+                  RelativePanel.AlignTopWithPanel="True"
+                  RelativePanel.AlignBottomWithPanel="True">
+                <TextBlock Text="{x:Bind VM.CurrentOperationText, Mode=OneWay}" Margin="0,0,0,2" FontWeight="SemiBold" VerticalAlignment="Center" CharacterSpacing="200" FontSize="14">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="#BFFFFFFF"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Padding="0" VerticalAlignment="Stretch"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignTopWithPanel="True"
+                        RelativePanel.AlignBottomWithPanel="True">
+                <Border Padding="0,0,6,0" BorderThickness="0,0,1,0">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="White" Opacity="0.2" />
+                    </Border.BorderBrush>
+                    
+                    <TextBlock Text="{x:Bind VM.LoggedUser, Mode=OneWay}" 
+                           Foreground="White" FontSize="16" FontWeight="Light" CharacterSpacing="60" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,12,0"/>
+                </Border>
                 <TextBlock Text="{Binding CurrentDateTime, Mode=OneWay, Converter={StaticResource DateTimeConverter}, ConverterParameter='h:mm tt'}" 
-                           Foreground="White" FontSize="24" TextAlignment="Right"/>
-                <TextBlock Text="{Binding CurrentDateTime, Mode=OneWay, Converter={StaticResource DateTimeConverter}, ConverterParameter='dddd, MMMM d, yyyy'}" 
-                           Foreground="White" FontSize="16" TextAlignment="Right"/>
+                           Foreground="White" FontSize="16" FontWeight="Medium" CharacterSpacing="60" TextAlignment="Right" Padding="12,0" VerticalAlignment="Center"/>
+                <!--<TextBlock Text="{Binding CurrentDateTime, Mode=OneWay, Converter={StaticResource DateTimeConverter}, ConverterParameter='dddd, MMMM d, yyyy'}" 
+                           Foreground="White" FontSize="12" TextAlignment="Right"/>-->
             </StackPanel>
         </RelativePanel>
-        <Frame Grid.Row="1" x:Name="shellFrame" Loaded="shellFrame_Loaded" Navigated="shellFrame_Navigated" />
+        <Frame Grid.Row="1" x:Name="shellFrame" Loaded="shellFrame_Loaded" />
     </Grid>
 </Page>

@@ -8,13 +8,28 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Padding="40">
-            <TextBlock x:Name="tb_device" Text="DeviceType" Margin="20" HorizontalAlignment="Center" />
-            <TextBox x:Name="tbx_entry" Height="100" />
-            <Button x:Name="btn_send" Content="Send Message" HorizontalAlignment="Center" Margin="20"/>
-            <Border BorderThickness="2" BorderBrush="Black">
-                <TextBlock x:Name="tb_receive" Height="100" Padding="20" />
-            </Border>
-        </StackPanel>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                <TextBlock x:Name="tb_conndesc" Text="Connect to remote with IP: " VerticalAlignment="Center" FontSize="20" />
+                <Button x:Name="btn_connect" FontSize="20" Margin="20" Click="ConnectButtonClick">Connect</Button>
+            </StackPanel>
+            
+            <TextBox Grid.Row="1" x:Name="tbx_input" PlaceholderText="Input here." IsEnabled="False" HorizontalAlignment="Stretch" />
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btn_send" IsEnabled="False" Click="OnSendMessageButtonClick">Send</Button>
+
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#ffdddddd" Padding="20">
+                <TextBlock x:Name="tb_output" FontSize="18" />
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

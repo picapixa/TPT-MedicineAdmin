@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="TPT_MMAS.View.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPT_MMAS.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RequestedTheme="Light">
+    <Page.Resources>
+        <Style x:Key="HyperlinkButtonStyle" TargetType="HyperlinkButton">
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlHyperlinkTextBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource HyperlinkButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="0,6,0,6"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="White" Opacity="0.7" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="HyperlinkButton">
+                        <Grid x:Name="RootGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="White" Opacity="0.8" />
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="White" Opacity="0.5" />
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource SplashScreenBackgroundBrush}">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="extendedSplashImage" Source="/Assets/SplashScreen.png"
+                   Width="200" Margin="0,0,0,20"/>
+
+            <StackPanel x:Name="sp_setup" Grid.Row="1" Width="280" Visibility="{x:Bind ViewMode, Mode=OneWay, Converter={StaticResource LoginPageViewModeVisibilitySwitcher}, ConverterParameter=Setup, FallbackValue=Collapsed}">
+                <TextBlock Style="{ThemeResource BaseContentTextBlockStyle}" Foreground="White" Margin="0,0,0,8" TextWrapping="Wrap" TextAlignment="Center">
+                    Welcome to your Mobile Medicine Administration System.
+                </TextBlock>
+                <TextBlock x:Name="sp_setupdesc"  Style="{ThemeResource BaseContentTextBlockStyle}" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center" TextAlignment="Center" FontSize="16" FontWeight="Light">Time to connect your server.</TextBlock>
+
+                <TextBox x:Name="tbx_hospapi" TextChanged="OnSetupTextboxChanged" Tag="tpt-hospital" GotFocus="OnSetupTextboxGotFocus" PlaceholderText="your hospital API URL" InputScope="Url" />
+                <TextBox x:Name="tbx_imsapi" TextChanged="OnSetupTextboxChanged" Tag="tpt-ims" GotFocus="OnSetupTextboxGotFocus" PlaceholderText="IMS API URL" Margin="0,0,0,-4" InputScope="Url" />
+                <TextBox x:Name="tbx_stncode" TextChanged="OnSetupTextboxChanged" PlaceholderText="station code" Margin="0,0,0,-4" />
+                <Button x:Name="btn_finishsetup" HorizontalAlignment="Stretch" Background="#FF870000" Margin="0,12" Foreground="White" IsEnabled="False" Click="OnSetupButtonClick">Finish</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Width="280" Visibility="{x:Bind ViewMode, Mode=OneWay, Converter={StaticResource LoginPageViewModeVisibilitySwitcher}, ConverterParameter=Login, FallbackValue=Visible}">
+                <TextBlock Style="{ThemeResource BaseContentTextBlockStyle}" Foreground="White" Margin="0,0,0,20" TextWrapping="Wrap" TextAlignment="Center">Login with your hospital account credentials.</TextBlock>
+
+                <TextBox x:Name="tbx_un" PlaceholderText="Username"  BorderBrush="#FF9B0000" TextChanged="LoginButtonChangeButtonState" />
+                <PasswordBox x:Name="pbx_pw" PlaceholderText="Password" BorderBrush="#FF9B0000" PasswordChanged="LoginButtonChangeButtonState" Margin="0,-4,0,0" KeyDown="OnPasswordBoxKeyDown" />
+                <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Stretch" Background="#FF870000" Margin="0,12" Foreground="White" IsEnabled="False" Click="OnLoginButtonClick"/>
+                <HyperlinkButton Visibility="Collapsed" x:Name="hbtn_setup" HorizontalAlignment="Center" Click="OnLoginConnectionProblemButtonClick" Style="{StaticResource HyperlinkButtonStyle}">
+                    <TextBlock Text="Can't connect?" />
+                </HyperlinkButton>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Visibility="{x:Bind ViewMode, Mode=OneWay, Converter={StaticResource LoginPageViewModeVisibilitySwitcher},ConverterParameter=Progress, FallbackValue=Collapsed}">
+                <ProgressRing IsActive="True" Width="40" Height="40" Foreground="White" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

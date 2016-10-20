@@ -1,13 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TPT_MMAS.Iot.Hardware;
 using TPT_MMAS.Shared.Interface;
 using System.ComponentModel;
-using Windows.System.Threading;
 using Windows.UI.Core;
 using Windows.ApplicationModel.Core;
 
@@ -15,6 +11,24 @@ namespace TPT_MMAS.Iot.ViewModel
 {
     public class DebuggingViewModel : ViewModelBase, INavigable
     {
+        private ShellViewModel _shellVM;
+
+        public DebuggingViewModel()
+        {
+            PropertyChanged += OnPropertyChanged;
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(IsScanningEnabled):
+                    RfidReader.IsEnabled = IsScanningEnabled.Value;
+                    break;
+                default:
+                    break;
+            }
+        }
 
         #region Tray control
         private string _trayStreamContent;
@@ -64,10 +78,10 @@ namespace TPT_MMAS.Iot.ViewModel
                 IsTrayOpen = (sender as TrayController).IsTrayOpen;
         }
         #endregion
-
+        
         #region Rfid
-
-        private RfidReader RfidReader { get; set; }
+        
+        private WiegandReader RfidReader { get; set; }
 
         private string _scannedData;
 
@@ -77,26 +91,22 @@ namespace TPT_MMAS.Iot.ViewModel
             set { Set(nameof(ScannedData), ref _scannedData, value); }
         }
 
-        //private bool _isRfScanningEnabled;
+        private bool? _isScanningEnabled;
 
-        //public bool IsRfScanningEnabled
-        //{
-        //    get { return _isRfScanningEnabled; }
-        //    set { Set(nameof(IsRfScanningEnabled), ref _isRfScanningEnabled, value); }
-        //}
-
-
-        public async void LoadRfidReaderAsync()
+        public bool? IsScanningEnabled
         {
-            RfidReader = new RfidReader(5, 6);
-
-            // prepare for subsequent scans
-            RfidReader.RfDataChanged += ReadScannedData;
-
-            // get first scan
-
-            while (true)
-            await RfidReader.GetRfidDataAsync();
+            get { return _isScanningEnabled; }
+            set { Set(nameof(IsScanningEnabled), ref _isScanningEnabled, value); }
+        }
+        
+        public void LoadRfidReaderAsync()
+        {
+            RfidReader = new WiegandReader(23, 24, true);
+            RfidReader.RfDataReceived += ReadScannedData;
+            RfidReader.IsEnabledChanged += (s, args) =>
+            {
+                IsScanningEnabled = RfidReader.IsEnabled;
+            };
         }
 
         private async void ReadScannedData(object sender, PropertyChangedEventArgs e)
@@ -106,22 +116,31 @@ namespace TPT_MMAS.Iot.ViewModel
             var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
             await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                ScannedData = c;
+                if (ulong.Parse(c) <= 0)
+                    ScannedData = "try again";
+                else
+                    ScannedData = c;
             });
-
-            await RfidReader.GetRfidDataAsync();
         }
 
         #endregion
 
         public void Activate(object parameter)
         {
+            //tray control
             LoadTrayController();
+            
+            //back button
+            _shellVM = (new ViewModelLocator()).Shell;
+            _shellVM.IsBackButtonEnabled = true;
         }
 
         public void Deactivate(object parameter)
         {
-            RfidReader.RfDataChanged -= ReadScannedData;
+            _shellVM.IsBackButtonEnabled = false;
+
+            if (RfidReader != null)
+                RfidReader.Dispose();
         }
     }
 }

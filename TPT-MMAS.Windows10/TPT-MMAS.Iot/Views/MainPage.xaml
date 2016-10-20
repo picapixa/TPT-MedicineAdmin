@@ -14,7 +14,11 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Grid Background="Crimson" Padding="20">
+        <Grid Padding="20" RightTapped="OnDeviceDetailsRightTapped">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource TPTAppPrimaryColor}" />
+            </Grid.Background>
+            
             <StackPanel VerticalAlignment="Center">
                 <TextBlock x:Name="tb_ipadd" Text="{x:Bind VM.DeviceIpAddress, FallbackValue='No IP Address', Mode=OneWay}" Foreground="White" FontSize="20" />
                 <TextBlock x:Name="tb_devname" Text="{x:Bind VM.DeviceName, FallbackValue='Device Name', Mode=OneWay}" Foreground="White" FontSize="32"/>
@@ -23,18 +27,12 @@
 
         <Grid Grid.Column="1">
             <StackPanel Padding="40" VerticalAlignment="Center">
-                <TextBlock Style="{ThemeResource HeaderTextBlockStyle}"
-                           Margin="0,0,0,32" FontSize="32">
+                <TextBlock Style="{ThemeResource HeaderStyle}">
                     Welcome to the Mobile Medicine Administration System
                 </TextBlock>
-                <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="20" FontWeight="SemiLight">
+                <TextBlock Style="{ThemeResource BaseContentTextBlockStyle}">
                     Please login at the In-patient Management System to use this device.
                 </TextBlock>
-
-                <StackPanel Margin="0,20" Orientation="Horizontal">
-                    <Button IsEnabled="False">Connect to Wi-Fi</Button>
-                    <Button Margin="12,0,0,0" Click="OnDebuggingClick">Debugging</Button>
-                </StackPanel>
             </StackPanel>
         </Grid>
 

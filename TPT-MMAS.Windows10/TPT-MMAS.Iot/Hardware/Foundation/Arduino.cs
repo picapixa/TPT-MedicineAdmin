@@ -15,8 +15,16 @@ namespace TPT_MMAS.Iot.Hardware.Foundation
 {
     public sealed class Arduino
     {
-        private const ushort deviceVid = 2341;
-        private const ushort devicePid = 0042;
+        //Arduino MEGA
+        //private const ushort deviceVid = 2341;
+
+
+        private const string deviceVid = "067B";
+
+        //ARDUINO MEGA
+        //private const ushort devicePid = 0042;
+
+        private const ushort devicePid = 2303;
         private const string deviceGuid = "86e0d1e0-8089-11d0-9ce4-08003e301f73";
 
         private SerialDevice serialPort = null;
@@ -56,18 +64,15 @@ namespace TPT_MMAS.Iot.Hardware.Foundation
 
         public async void ConnectAsync()
         {
-            //string aqs = SerialDevice.GetDeviceSelectorFromUsbVidPid(deviceVid, devicePid);
-            //string aqs = SerialDevice.GetDeviceSelector();
-            //DeviceInformationCollection dis = await DeviceInformation.FindAllAsync(aqs);
+            string devId = (App.PluggedDevice == Device.Prototype) ?
+                            @"\\?\usb#vid_10c4&pid_ea60#0001#{86e0d1e0-8089-11d0-9ce4-08003e301f73}" :
+                            @"\\?\USB#VID_2341&PID_0042#75439313537351600220#{86e0d1e0-8089-11d0-9ce4-08003e301f73}";
 
-            //if (dis.Count == 0)
-            //    return;
+            // device ID of development board
+            //string devId = @"\\?\USB#VID_2341&PID_0042#75439313537351600220#{86e0d1e0-8089-11d0-9ce4-08003e301f73}";
 
-            //DeviceInformation dev = dis[0];
-
-            //var stat = DeviceAccessInformation.CreateFromId(dev.Id).CurrentStatus;
-
-            string devId = @"\\?\USB#VID_2341&PID_0042#75439313537351600220#{86e0d1e0-8089-11d0-9ce4-08003e301f73}";
+            //// device ID of custom tray controller
+            //string devId = @"\\?\usb#vid_10c4&pid_ea60#0001#{86e0d1e0-8089-11d0-9ce4-08003e301f73}";
 
             // selects the first instance of the Arduino-based tray controller
             serialPort = await SerialDevice.FromIdAsync(devId);

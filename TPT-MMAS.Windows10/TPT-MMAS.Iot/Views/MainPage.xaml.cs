@@ -43,12 +43,11 @@ namespace TPT_MMAS.Iot.Views
 
             VM = DataContext as MainViewModel;
         }
-
-        private void OnDebuggingClick(object sender, RoutedEventArgs e)
+        
+        private void OnDeviceDetailsRightTapped(object sender, RightTappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(DebuggingPage));
         }
-
 
         #region Navigation helper state implementations
 

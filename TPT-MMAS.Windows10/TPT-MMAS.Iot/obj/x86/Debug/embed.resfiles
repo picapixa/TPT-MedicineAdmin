@@ -1,3 +1,8 @@
 App.xbf
 Shell.xbf
+Views\DebuggingPage.xbf
+Views\Dialogs\ConfirmationDialog.xbf
+Views\Dialogs\ErrorDialog.xbf
 Views\MainPage.xbf
+Views\PatientPage.xbf
+Views\PatientsPage.xbf

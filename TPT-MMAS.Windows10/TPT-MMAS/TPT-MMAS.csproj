@@ -11,13 +11,17 @@
     <AssemblyName>TPT-MMAS</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Win10_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>TPT-MMAS_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>3D2743D7A05ABB7C530D36B686E6BF00387E6C35</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -68,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;TPT_IMS</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -93,38 +97,38 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\HospitalApi.cs" />
-    <Compile Include="API\ImsApi.cs" />
-    <Compile Include="API\WebClient.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Admission.cs" />
-    <Compile Include="Model\AdmittedPatient.cs" />
-    <Compile Include="Model\DataService\HospitalDataService.cs" />
-    <Compile Include="Model\DataItem.cs" />
-    <Compile Include="Model\Finding.cs" />
-    <Compile Include="Model\MobileMedAdminMachine.cs" />
-    <Compile Include="Model\DataService\ImsDataService.cs" />
-    <Compile Include="Model\Patient.cs" />
-    <Compile Include="Model\PatientGroup.cs" />
-    <Compile Include="Model\Person.cs" />
-    <Compile Include="Model\Personnel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\IotShellViewModel.cs" />
-    <Compile Include="ViewModel\PatientProfileViewModel.cs" />
+    <Compile Include="ViewModel\DevicesMainViewModel.cs" />
+    <Compile Include="ViewModel\MedicinesViewModel.cs" />
     <Compile Include="ViewModel\PatientsViewModel.cs" />
-    <Compile Include="ViewModel\ViewmodelBase.cs" />
+    <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\DebugPage.xaml.cs">
       <DependentUpon>DebugPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\IoT\IotShell.xaml.cs">
-      <DependentUpon>IotShell.xaml</DependentUpon>
+    <Compile Include="View\Devices\DevicesRegisterPage.xaml.cs">
+      <DependentUpon>DevicesRegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\AddMedicineDialog.xaml.cs">
+      <DependentUpon>AddMedicineDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\AddPrescriptionDialog.xaml.cs">
+      <DependentUpon>AddPrescriptionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\LoginDialog.xaml.cs">
+      <DependentUpon>LoginDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LicensesPage.xaml.cs">
+      <DependentUpon>LicensesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MedicinesPage.xaml.cs">
       <DependentUpon>MedicinesPage.xaml</DependentUpon>
@@ -135,17 +139,19 @@
     <Compile Include="View\PatientsPage.xaml.cs">
       <DependentUpon>PatientsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SystemsPage.xaml.cs">
-      <DependentUpon>SystemsPage.xaml</DependentUpon>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="TPT-MMAS_TemporaryKey.pfx" />
     <None Include="Win10_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Licenses.html" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -173,7 +179,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\IoT\IotShell.xaml">
+    <Page Include="View\Devices\DevicesRegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\AddMedicineDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\AddPrescriptionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\LoginDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LicensesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,7 +215,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SystemsPage.xaml">
+    <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,6 +230,12 @@
       <Project>{c9221740-9260-41b6-b61f-ac8d4a1f8b0d}</Project>
       <Name>TPT-MMAS.Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

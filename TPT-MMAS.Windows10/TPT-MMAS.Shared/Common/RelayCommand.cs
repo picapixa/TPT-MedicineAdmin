@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
+/// <summary>
+/// The following code is derived from the MVVMLight library, which is under the MIT License.
+/// 
+/// Project: https://mvvmlight.codeplex.com/
+/// License: https://mvvmlight.codeplex.com/license
 namespace TPT_MMAS.Shared.Common
 {
     /// <summary>
