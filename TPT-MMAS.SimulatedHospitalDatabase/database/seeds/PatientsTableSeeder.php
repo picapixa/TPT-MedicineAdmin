@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 
 class PatientsTableSeeder extends Seeder
 {
-	private $seeder_count = 50;
+	private $seeder_count = 2000;
 
 	/**
 	 * Run the database seeds.

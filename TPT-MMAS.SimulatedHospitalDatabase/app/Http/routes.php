@@ -11,21 +11,14 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
 Route::group(['prefix' => 'api'], function() {
 	
 	Route::group(['prefix' => 'v1'], function() {
+		Route::post('admissions/verify/{id}', 'AdmissionController@verify');
 		Route::resource('admissions', 'AdmissionController', ['only' => [
-				'index', 'show'
-			]]);
+			'index', 'show'
+		]]);
+		Route::post('auth/verify','AuthController@verify');
 	});
 	
 });
-
-// Route::auth();
-
-// Route::get('/home', 'HomeController@index');

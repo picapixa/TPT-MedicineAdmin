@@ -18,8 +18,16 @@
 Route::group(['prefix' => 'api'], function() {
 	
 	Route::group(['prefix' => 'v1'], function() {
+		Route::group(['prefix' => 'auth'], function() {
+		    Route::post('verify', 'AuthController@verify');
+		});
+
 		Route::resource('admissions', 'AdmissionsController');
-		Route::resource('machines', 'MachineInfoController');
+		Route::resource('inventory', 'InventoryController');
+		Route::resource('machines', 'MachineInfoController', ['only' => [
+			'index', 'update'
+		]]);
+		Route::resource('medicines', 'MedicinesController');
 	});
 	
 });

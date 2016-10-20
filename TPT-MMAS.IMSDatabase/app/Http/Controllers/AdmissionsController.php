@@ -24,9 +24,10 @@ class AdmissionsController extends Controller
 		if((isset($vars['inMachine'])) && ($vars['inMachine'] == 'true'))
 			$db->whereNotNull('ref_mmas');
 		
-		$admissions = $db->get();
+		$admissions = [];
+		$adm = $db->get();
 
-		return response()->json($admissions);
+		return response()->json($adm);
 	}
 
 	/**
@@ -49,9 +50,7 @@ class AdmissionsController extends Controller
 	{
 		$id = $request->input('adm_id');
 
-
 		try {
-
 			//check if the admission exists
 			$client = new Guzzle([
 				'base_uri' => config('database-tpt.hospital-api') . '/api/' . config('database-tpt.hospital-apiver') . '/',
@@ -60,14 +59,22 @@ class AdmissionsController extends Controller
 			$response = $client->get('admissions/' . $id);
 			$admission = (string) $response->getBody();
 
-
 			$statusCode = $response->getStatusCode();
 			if ($statusCode == 200) {
-				//var_dump($admission);
+				$values = [
+					'adp_adm' => $id,
+					'ref_mmas' => 1
+				];
 
 				try {
-				//insert to IMS!
-					$ins = DB::table('ims_adpats')->insert(['adp_adm' => $id]);
+					
+					//check if adp_adm is already in db
+					$existing = DB::table('ims_adpats')->where('adp_adm', $id)->first();
+
+					if (count($existing) == 0)
+						$insert = DB::table('ims_adpats')->insert($values);
+					else 
+						$update = DB::table('ims_adpats')->where('adp_adm', $id)->update($values);
 
 					$row = DB::table('ims_adpats')->where('adp_adm', $id)->first();
 					return response()->json($row);
@@ -93,7 +100,7 @@ class AdmissionsController extends Controller
 		} catch (\GuzzleHttp\Exception\ClientException $e) {
 
 			$error = $e->getResponse()->getBody()->getContents();
-//			return $error;
+			return $error;
 		}
 	}
 
@@ -105,7 +112,8 @@ class AdmissionsController extends Controller
 	 */
 	public function show($id)
 	{	
-		//
+		$db = DB::table('ims_adpats')->where('adp_imsid', $id)->get();
+		return resource()->json($db);
 	}
 
 	/**
@@ -128,7 +136,16 @@ class AdmissionsController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		//
+		$isInMachine = $request->input('inMachine');
+		$db = DB::table('ims_adpats')->where('adp_imsid', $id);
+
+		if ($isInMachine == 'true')
+			$db->update(['ref_mmas' => 1]);
+		elseif ($isInMachine == 'false')
+			$db->update(['ref_mmas' => null, 'adp_remark' => 'inactive']);
+
+		$row = DB::table('ims_adpats')->where('adp_adm', $id)->first();
+		return response()->json($row);
 	}
 
 	/**
@@ -140,5 +157,21 @@ class AdmissionsController extends Controller
 	public function destroy($id)
 	{
 		//
+	}
+
+	/**
+	* Gets the admissions data from the hospital database.
+	*
+	*/
+	private function getAdmissionsData($id)
+	{
+		$client = new Guzzle([
+			'base_uri' => config('database-tpt.hospital-api') . '/api/' . config('database-tpt.hospital-apiver') . '/',
+			'headers' => ['Accept' => 'application/json', 'Content-Type' => 'application/json']
+		]);			
+		$response = $client->get('admissions/' . $id);
+		$a = (string) $response->getBody();
+
+		return json_decode($a);
 	}
 }

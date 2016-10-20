@@ -134,6 +134,20 @@ class AdmissionController extends Controller
 		unset($p->pat_rfkey);
 		$admission->adm_patient = $p;
 
+		//attach attending physicians
+		$physicians = [];
+		$physicians_db = DB::table('itr_dradms')
+						->where('ref_adm', $admission->adm_id)
+						->get();
+		
+		foreach ($physicians_db as $physician) {
+			$p_id = $physician->ref_dr;
+			$phy_db = DB::table('hpt_hr')->where('hr_id', $p_id)->first();
+			unset($phy_db->hr_uname, $phy_db->hr_level, $phy_db->hr_key, $phy_db->deleted_at);
+			array_push($physicians, $phy_db);
+		}
+		$admission->adm_physicians = $physicians;
+
 		//attach findings history
 		$findings = [];
 		$findings_db = DB::table('hpt_findings')
@@ -187,6 +201,18 @@ class AdmissionController extends Controller
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function verify(Request $request, $id)
+	{
+		$input = $request->input('key');
+		$key = DB::table("hpt_adm")->where("adm_id", $id)->first()->adm_rfkey;
+
+		if (password_verify($input, $key)) {
+			return response(null);
+		}
+		else
+			abort(400, "Invalid RF key");
 	}
 
 }

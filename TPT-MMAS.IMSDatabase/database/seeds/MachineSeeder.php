@@ -13,7 +13,7 @@ class MachineSeeder extends Seeder
     {
     	$mmas = [
     		'mmas_machine' => 'tpt-mmas-1a',
-    		'mmas_ipa' => '192.168.17.211',
+    		'mmas_ipa' => '192.168.17.211'
     	];
 
     	DB::table('ims_mmas')->insert($mmas);

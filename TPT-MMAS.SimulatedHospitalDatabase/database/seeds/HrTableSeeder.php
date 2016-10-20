@@ -16,6 +16,8 @@ class HrTableSeeder extends Seeder
 	{
 		$faker = Faker::create('en_PH');
 
+		$default_pw = 'helloworld';
+
 		$all_personnel = [];
 
 		array_push($all_personnel, [
@@ -25,7 +27,47 @@ class HrTableSeeder extends Seeder
 				'hr_uname' => 'jrpalcoriza',
 				'hr_title' => 'Administrator',
 				'hr_level' => 'admin',
-				'hr_key'   => password_hash('helloworld', PASSWORD_DEFAULT)
+				'hr_key'   => password_hash($default_pw, PASSWORD_DEFAULT)
+		]);
+
+		array_push($all_personnel, [
+				'hr_fname' => 'Jonas Edwin',
+				'hr_mname' => 'Colorado',
+				'hr_lname' => 'Fonacier',
+				'hr_uname' => 'jecfonacier',
+				'hr_title' => 'Administrator',
+				'hr_level' => 'admin',
+				'hr_key'   => password_hash($default_pw, PASSWORD_DEFAULT)
+		]);
+
+		array_push($all_personnel, [
+				'hr_fname' => 'Glenn Howard',
+				'hr_mname' => 'Celerio',
+				'hr_lname' => 'Paredes',
+				'hr_uname' => 'ghcparedes',
+				'hr_title' => 'Administrator',
+				'hr_level' => 'admin',
+				'hr_key'   => password_hash($default_pw, PASSWORD_DEFAULT)
+		]);
+
+		array_push($all_personnel, [
+				'hr_fname' => 'Charlemagne Zoilo',
+				'hr_mname' => 'Constantino',
+				'hr_lname' => 'Rivera',
+				'hr_uname' => 'czcrivera',
+				'hr_title' => 'Administrator',
+				'hr_level' => 'admin',
+				'hr_key'   => password_hash($default_pw, PASSWORD_DEFAULT)
+		]);
+
+		array_push($all_personnel, [
+				'hr_fname' => 'Joven',
+				'hr_mname' => 'Ela',
+				'hr_lname' => 'Subala',
+				'hr_uname' => 'jesubala',
+				'hr_title' => 'Administrator',
+				'hr_level' => 'admin',
+				'hr_key'   => password_hash($default_pw, PASSWORD_DEFAULT)
 		]);
 
 		$dummy_medpeeps = [];
@@ -47,13 +89,14 @@ class HrTableSeeder extends Seeder
 				'hr_mname' => $faker->lastName,
 				'hr_lname' => $faker->lastName,
 				'hr_level' => $levels[mt_rand(0, count($levels) - 1)],
-				'hr_key' => password_hash('helloworld', PASSWORD_DEFAULT)
+				'hr_key' => password_hash($default_pw, PASSWORD_DEFAULT)
 			];
 
 			//set uname
 			$fn = strtolower($dummy_medpeeps[$i]['hr_fname'][0]);
 			$mn = strtolower($dummy_medpeeps[$i]['hr_mname'][0]);
 			$ln = strtolower($dummy_medpeeps[$i]['hr_lname']);
+			$ln = preg_replace('/\s+/', '', $ln);	//remove spaces
 			$dummy_medpeeps[$i]['hr_uname'] = $fn . $mn . $ln;
 
 			//set title based on level

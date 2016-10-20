@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class MachineInfoController extends Controller
+class InventoryController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
@@ -16,8 +17,7 @@ class MachineInfoController extends Controller
 	 */
 	public function index()
 	{
-		$data = DB::table('ims_mmas')->get();
-
+		$data = DB::table('ims_meds')->get();
 		return response()->json($data);
 	}
 
@@ -39,7 +39,15 @@ class MachineInfoController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		//
+		$body = json_decode($request->getContent());
+		
+		$time = Carbon::parse($body->med_lastadded);
+		$body->med_lastadded = $time;
+
+		$id = DB::table('ims_meds')->insertGetId((array)$body);
+		
+		$data = DB::table('ims_meds')->where('med_id', $id)->first();
+		return response()->json($data);
 	}
 
 	/**
@@ -73,38 +81,11 @@ class MachineInfoController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		$deviceName = $id;
-		$input = $request->input();
-		$db = DB::table('ims_mmas');
-
-		if (isset($input['isOnline'])) {
-			$data = [
-				'mmas_lastol' => DB::raw('CURRENT_TIMESTAMP')
-			];
-
-			$db_update = $db->where('mmas_machine', $deviceName)->update($data);
-		}
-		else {
-			$db_existing = $db->where('mmas_machine', $deviceName)->first();
-
-			if (count($db_existing) == 0) {
-				// insert
-				$db_insert = $db->insert(['mmas_machine' => $deviceName, 'mmas_ipa', $ipAddress]);
-			}
-			else {
-				// update
-				$data = [
-					'mmas_ipa' => $input['ipAddress'],
-					'mmas_dateupdate' => DB::raw('CURRENT_TIMESTAMP')
-				];
-
-				$db_update = $db->where('mmas_machine', $deviceName)->update($data);
-			}			
-		}
-
-		$db_new = $db->where('mmas_machine', $deviceName)->first();
-		return response()->json($db_new);
-
+		$body = json_decode($request->getContent());
+		
+		$resp = DB::table('ims_meds')->where('med_id', $id)->update((array)$body);		
+		$data = DB::table('ims_meds')->where('med_id', $id)->first();
+		return response()->json($data);
 	}
 
 	/**
